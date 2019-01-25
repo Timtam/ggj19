@@ -1,0 +1,23 @@
+[gd_resource type="MeshLibrary" load_steps=4 format=2]
+
+[ext_resource path="res://assets/world/naturePack_001.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="ImageTexture" id=3]
+
+flags = 7
+storage = 0
+lossy_quality = 0.7
+flags = 7
+size = Vector2( 64, 64 )
+
+[sub_resource type="ConvexPolygonShape" id=2]
+
+points = PoolVector3Array( 0, 0, 0, 3, 0.299805, 0, 3, 0, 0, 0, 0.299805, 0, 0, 0.299805, -3, 3, 0.299805, 0, 0, 0.299805, 0, 3, 0.299805, -3, 3, 0, -3, 3, 0.299805, 0, 3, 0.299805, -3, 3, 0, 0, 3, 0, -3, 0, 0, 0, 3, 0, 0, 0, 0, -3, 0, 0.299805, -3, 0, 0, 0, 0, 0, -3, 0, 0.299805, 0, 3, 0, -3, 0, 0.299805, -3, 0, 0, -3, 3, 0.299805, -3 )
+
+[resource]
+
+item/0/name = "ground_dirt"
+item/0/mesh = ExtResource( 1 )
+item/0/shapes = [ SubResource( 2 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
+item/0/preview = SubResource( 3 )
+
