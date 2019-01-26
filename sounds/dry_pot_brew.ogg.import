@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dry_pot_brew.ogg-f5e17cbcb3d985a459332ea14dacb504.oggstr"
+
+[deps]
+
+source_file="res://sounds/dry_pot_brew.ogg"
+dest_files=[ "res://.import/dry_pot_brew.ogg-f5e17cbcb3d985a459332ea14dacb504.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

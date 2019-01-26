@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/growth_pot_brew.ogg-296040cccbede91edde0a4acfbf98af9.oggstr"
+
+[deps]
+
+source_file="res://sounds/growth_pot_brew.ogg"
+dest_files=[ "res://.import/growth_pot_brew.ogg-296040cccbede91edde0a4acfbf98af9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
