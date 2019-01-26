@@ -8,6 +8,8 @@ public class Inventory : Panel
 	InvSlot[] invSlots;
 	bool isInInventory = false;
 
+	public static Inventory Instance;
+
 	public override void _Ready()
 	{
 		invGrid = (GridContainer)GetNode("inv_grid");
@@ -23,6 +25,8 @@ public class Inventory : Panel
 		{
 			AddItem(item);
 		}
+
+		Instance = this;
 	}
 
 	public override void _Input(InputEvent @event)
@@ -61,5 +65,17 @@ public class Inventory : Panel
 		}
 
 		slot.AddItem(item, count);
+	}
+
+	public bool HasFinalItems()
+	{
+		bool hasTree = false, hasRock = false, hasGrass = false;
+		foreach (var slot in invSlots)
+		{
+			if (slot.ContainsItem(Items.GetItem("Holz"))) hasTree = true;
+			if (slot.ContainsItem(Items.GetItem("Steine"))) hasRock = true;
+			if (slot.ContainsItem(Items.GetItem("Stroh"))) hasGrass = true;
+		}
+		return hasTree && hasRock && hasGrass;
 	}
 }
