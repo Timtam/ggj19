@@ -566,7 +566,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -50.0
-margin_top = -51.1362
+margin_top = -68.2361
 margin_right = 100.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -593,5 +593,9 @@ _sections_unfolded = [ "Playback Options" ]
 [connection signal="tree_exiting" from="." to="." method="OnTreeExiting"]
 
 [connection signal="pressed" from="ui/dialog_box/hbox/vbox/button_a" to="ui/dialog_box" method="OnButtonPressed" binds= [ 0 ]]
+
+[connection signal="pressed" from="ui/dialog_box/hbox/vbox/button_b" to="ui/dialog_box" method="OnButtonPressed" binds= [ 1 ]]
+
+[connection signal="pressed" from="ui/dialog_box/hbox/vbox/button_c" to="ui/dialog_box" method="OnButtonPressed" binds= [ 2 ]]
 
 
