@@ -31,6 +31,7 @@ public class DialogBox : VBoxContainer
 	public void DisplayDialog(Dialog dialog)
 	{
 		currentDialog = dialog;
+		currentDialog.Script?.Invoke();
 		textBox.Text = currentDialog.Text;
 		for (int i = 0; i < currentDialog.Options.Count && i < buttons.Length; i++)
 		{

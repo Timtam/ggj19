@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Player : KinematicBody
 {
@@ -11,6 +13,7 @@ public class Player : KinematicBody
 	Spatial target;
 	Camera camera;
 	Vector3 velocity = Vector3.Zero;
+	IList<IInteractable> closeInteractions = new List<IInteractable>();
 
 	public override void _Ready()
 	{
@@ -23,15 +26,12 @@ public class Player : KinematicBody
 	{
 		if (Input.IsActionJustPressed("interact"))
 		{
-			var dialog = (DialogBox)GetNode("/root/world/ui/dialog_box");
-			dialog.DisplayDialog(new Dialog
+			if (!closeInteractions.Any())
 			{
-				Text = "Das ist ein Test-Dialog.",
-				Options = new System.Collections.Generic.Dictionary<string, Dialog>() {
-					{ "Ja", new Dialog { Text = "Ok, weitermachen.\nNeue Zeile" } },
-					{ "Nein", null },
-				},
-			});
+				return;
+			}
+			var interaction = closeInteractions.OrderBy(i => (i as Spatial).GlobalTransform.origin.DistanceSquaredTo(this.GlobalTransform.origin)).First();
+			this.GetGameWorld().DialogSystem.DisplayDialog(interaction.GetInteractionDialog());
 		}
 	}
 
@@ -73,5 +73,15 @@ public class Player : KinematicBody
 			targetRotation.x = Mathf.Clamp(targetRotation.x, -70, 70);
 			target.RotationDegrees = targetRotation;
 		}
+	}
+
+	public void EnterInteractionArea(IInteractable i)
+	{
+		closeInteractions.Add(i);
+	}
+
+	public void ExitInteractionArea(IInteractable i)
+	{
+		closeInteractions.Remove(i);
 	}
 }

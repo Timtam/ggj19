@@ -53,6 +53,9 @@
     <Compile Include="code\Util.cs" />
     <Compile Include="code\Dialog.cs" />
     <Compile Include="scenes\game\scripts\GameWorld.cs" />
+    <Compile Include="scenes\game\scripts\BaseInteractable.cs" />
+    <Compile Include="scenes\game\scripts\IInteractable.cs" />
+    <Compile Include="scenes\game\scripts\Mushroom.cs" />
     <Compile Include="scenes\game\scripts\Player.cs" />
     <Compile Include="scenes\game\scripts\PlayerCam.cs" />
     <Compile Include="scenes\ui\scripts\DialogBox.cs" />

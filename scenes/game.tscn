@@ -1,19 +1,24 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scenes/game/scripts/GameWorld.cs" type="Script" id=1]
 [ext_resource path="res://assets/meshlib.tres" type="MeshLibrary" id=2]
 [ext_resource path="res://assets/world/naturePack_111.obj" type="ArrayMesh" id=3]
 [ext_resource path="res://assets/world/naturePack_112.obj" type="ArrayMesh" id=4]
-[ext_resource path="res://assets/world/naturePack_114.obj" type="ArrayMesh" id=5]
-[ext_resource path="res://assets/world/naturePack_107.obj" type="ArrayMesh" id=6]
-[ext_resource path="res://assets/world/naturePack_077.obj" type="ArrayMesh" id=7]
-[ext_resource path="res://assets/world/naturePack_065.obj" type="ArrayMesh" id=8]
-[ext_resource path="res://scenes/game/scripts/Player.cs" type="Script" id=9]
-[ext_resource path="res://assets/player/basicCharacter.tres" type="ArrayMesh" id=10]
-[ext_resource path="res://scenes/game/scripts/PlayerCam.cs" type="Script" id=11]
-[ext_resource path="res://scenes/ui/scripts/DialogBox.cs" type="Script" id=12]
-[ext_resource path="res://assets/ui/default_theme.tres" type="Theme" id=13]
-[ext_resource path="res://assets/ui/down.png" type="Texture" id=14]
+[ext_resource path="res://scenes/game/scripts/Mushroom.cs" type="Script" id=5]
+[ext_resource path="res://assets/world/naturePack_114.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://assets/world/naturePack_107.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://assets/world/naturePack_077.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://assets/world/naturePack_065.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://scenes/game/scripts/Player.cs" type="Script" id=10]
+[ext_resource path="res://assets/player/basicCharacter.tres" type="ArrayMesh" id=11]
+[ext_resource path="res://scenes/game/scripts/PlayerCam.cs" type="Script" id=12]
+[ext_resource path="res://scenes/ui/scripts/DialogBox.cs" type="Script" id=13]
+[ext_resource path="res://assets/ui/default_theme.tres" type="Theme" id=14]
+[ext_resource path="res://assets/ui/down.png" type="Texture" id=15]
+
+[sub_resource type="BoxShape" id=7]
+
+extents = Vector3( 1.30259, 0.633665, 1.07694 )
 
 [sub_resource type="ConvexPolygonShape" id=4]
 
@@ -185,6 +190,35 @@ material/0 = null
 material/1 = null
 material/2 = null
 material/3 = null
+script = ExtResource( 5 )
+
+[node name="Area" type="Area" parent="map/objs/MeshInstance2" index="0"]
+
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="map/objs/MeshInstance2/Area" index="0"]
+
+shape = SubResource( 7 )
+disabled = false
 
 [node name="MeshInstance3" type="MeshInstance" parent="map/objs" index="2"]
 
@@ -198,7 +232,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 5 )
+mesh = ExtResource( 6 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -232,7 +266,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 6 )
+mesh = ExtResource( 7 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -268,7 +302,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 7 )
+mesh = ExtResource( 8 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -323,7 +357,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 8 )
+mesh = ExtResource( 9 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -361,7 +395,7 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="CollisionShape" type="CollisionShape" parent="player" index="0"]
 
@@ -382,7 +416,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 10 )
+mesh = ExtResource( 11 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -411,7 +445,7 @@ fov = 70.0
 size = 1.0
 near = 0.05
 far = 100.0
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ui" type="Control" parent="." index="3"]
@@ -448,7 +482,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/separation = 20
 alignment = 2
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_constants" ]
 
 [node name="hbox" type="HBoxContainer" parent="ui/dialog_box" index="0"]
@@ -506,7 +540,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 13 )
+theme = ExtResource( 14 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -532,7 +566,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 13 )
+theme = ExtResource( 14 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -558,7 +592,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 13 )
+theme = ExtResource( 14 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -583,7 +617,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 13 )
+theme = ExtResource( 14 )
 _sections_unfolded = [ "Theme" ]
 
 [node name="text" type="RichTextLabel" parent="ui/dialog_box/text_panel" index="0"]
@@ -605,7 +639,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 13 )
+theme = ExtResource( 14 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -626,7 +660,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -50.0
-margin_top = -69.345
+margin_top = -65.1447
 margin_right = 100.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -635,7 +669,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
@@ -651,6 +685,10 @@ blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
 [connection signal="tree_exiting" from="." to="." method="OnTreeExiting"]
+
+[connection signal="body_entered" from="map/objs/MeshInstance2/Area" to="map/objs/MeshInstance2" method="OnBodyEntered"]
+
+[connection signal="body_exited" from="map/objs/MeshInstance2/Area" to="map/objs/MeshInstance2" method="OnBodyExited"]
 
 [connection signal="pressed" from="ui/dialog_box/hbox/vbox/button_a" to="ui/dialog_box" method="OnButtonPressed" binds= [ 0 ]]
 
