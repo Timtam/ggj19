@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Hütte.obj-18bdffb1a981cc8234ed4392ffc7a6e0.mesh"
+
+[deps]
+
+files=[ "res://.import/Hütte.obj-18bdffb1a981cc8234ed4392ffc7a6e0.mesh" ]
+
+source_file="res://assets/world/obj/Hütte.obj"
+dest_files=[ "res://.import/Hütte.obj-18bdffb1a981cc8234ed4392ffc7a6e0.mesh", "res://.import/Hütte.obj-18bdffb1a981cc8234ed4392ffc7a6e0.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.03, 0.03, 0.03 )
