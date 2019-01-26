@@ -10,6 +10,8 @@ public class Player : KinematicBody
 	const float MOUSE_SENSITIVITY = 0.0009f;
 	const float JUMP_SPEED = 5.0f;
 
+	public float Health;
+
 	Spatial target;
 	Camera camera;
 	Vector3 velocity = Vector3.Zero;
@@ -20,6 +22,7 @@ public class Player : KinematicBody
 		target = (Spatial)GetNode("target");
 		camera = (PlayerCam)GetNode("target/camera");
 		Input.SetMouseMode(Godot.Input.MouseMode.Captured);
+		Health = 100;
 	}
 
 	public override void _Process(float delta)

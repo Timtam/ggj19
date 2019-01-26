@@ -60,6 +60,7 @@
     <Compile Include="scenes\game\scripts\Player.cs" />
     <Compile Include="scenes\game\scripts\PlayerCam.cs" />
     <Compile Include="scenes\ui\scripts\DialogBox.cs" />
+    <Compile Include="scenes\ui\scripts\Health.cs" />
     <Compile Include="scenes\ui\scripts\Inventory.cs" />
     <Compile Include="scenes\ui\scripts\InvItem.cs" />
     <Compile Include="scenes\ui\scripts\InvSlot.cs" />
