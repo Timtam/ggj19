@@ -40,16 +40,19 @@ public class Items
 		new Item { Name = "Holz", IconPath = "res://assets/ui/item/Holz.png" },
 		new Item { Name = "Steine", IconPath = "res://assets/ui/item/Stein.png" },
 		new Item { Name = "Stroh", IconPath = "res://assets/ui/item/Stroh.png" },
-		new Item { Name = "Pilze" },
+		new Item { Name = "Pilze", IconPath = "res://assets/ui/item/Mitternachtspilz.png" },
 		new Item { Name = "Wasser", IconPath = "res://assets/ui/item/Wasser.png" },
 		new Item { Name = "Beeren", IconPath = "res://assets/ui/item/Beeren.png" },
 		new Item { Name = "Kräuter", IconPath = "res://assets/ui/item/Krauter.png" },
 		new Item { Name = "Federn", IconPath = "res://assets/ui/item/Feder_rot.png" },
 		new Item { Name = "Kristall", IconPath = "res://assets/ui/item/Kristall_rosa.png" },
-		new Item { Name = "Blüten" },
+		new Item { Name = "Blüten", IconPath = "res://assets/ui/item/Blute.png" },
 		new Item { Name = "Flügel" },
-		new Item { Name = "Zähne" },
-		new Item { Name = "Spinnenaugen" },
+		new Item { Name = "Zähne", IconPath = "res://assets/ui/item/Zahn.png" },
+		new Item { Name = "Spinnenaugen", IconPath = "res://assets/ui/item/Auge.png" },
+		new Item { Name = "Zutatenliste (Stärketrank)", IconPath = "res://assets/ui/item/Liste.png" },
+		new Item { Name = "Zutatenliste (Wachstumstrank)", IconPath = "res://assets/ui/item/Liste.png" },
+		new Item { Name = "Zutatenliste (Trocknungstrank)", IconPath = "res://assets/ui/item/Liste.png" },
 	};
 
 	public static Item GetItem(string name)

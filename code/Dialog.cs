@@ -185,6 +185,7 @@ public static class Dialogs
 						Script = () =>
 						{
 							DialogTriggers.HasListTree = true;
+							Inventory.Instance.AddItem(Items.GetItem("Zutatenliste (Wachstumstrank)"));
 						}
 					}
 				}
@@ -202,6 +203,7 @@ public static class Dialogs
 						Script = () =>
 						{
 							DialogTriggers.HasListRock = true;
+							Inventory.Instance.AddItem(Items.GetItem("Zutatenliste (Stärketrank)"));
 						}
 					}
 				}
@@ -219,6 +221,7 @@ public static class Dialogs
 						Script = () =>
 						{
 							DialogTriggers.HasListGrass = true;
+							Inventory.Instance.AddItem(Items.GetItem("Zutatenliste (Trocknungstrank)"));
 						}
 					}
 				}
