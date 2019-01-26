@@ -72,8 +72,8 @@ public class Player : KinematicBody
 	{
 		if (@event is InputEventMouseMotion motion && Input.GetMouseMode() == Input.MouseMode.Captured)
 		{
-			this.RotateY(motion.Relative.x * MOUSE_SENSITIVITY * -1);
 			target.RotateX(motion.Relative.y * MOUSE_SENSITIVITY * -1);
+			this.RotateY(motion.Relative.x * MOUSE_SENSITIVITY * -1);
 
 			var targetRotation = target.RotationDegrees;
 			targetRotation.x = Mathf.Clamp(targetRotation.x, -70, 70);
