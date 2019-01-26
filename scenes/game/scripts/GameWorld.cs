@@ -8,11 +8,13 @@ public class GameWorld : Spatial
 
 	public DialogBox DialogSystem;
 	public Player Player;
+	public Inventory Inventory;
 
 	public override void _Ready()
 	{
 		DialogSystem = (DialogBox)GetNode("ui/dialog_box");
 		Player = (Player)GetNode("player");
+		Inventory = (Inventory)GetNode("ui/inventory");
 	}
 
 	public void OnTreeExiting()
