@@ -1,35 +1,60 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://assets/meshlib.tres" type="MeshLibrary" id=1]
-[ext_resource path="res://assets/world/naturePack_111.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://assets/world/naturePack_112.obj" type="ArrayMesh" id=3]
-[ext_resource path="res://assets/world/naturePack_114.obj" type="ArrayMesh" id=4]
-[ext_resource path="res://assets/world/naturePack_107.obj" type="ArrayMesh" id=5]
-[ext_resource path="res://assets/world/naturePack_077.obj" type="ArrayMesh" id=6]
-[ext_resource path="res://assets/world/naturePack_065.obj" type="ArrayMesh" id=7]
-[ext_resource path="res://scenes/game/scripts/Player.cs" type="Script" id=8]
-[ext_resource path="res://assets/player/basicCharacter.tres" type="ArrayMesh" id=9]
-[ext_resource path="res://scenes/game/scripts/PlayerCam.cs" type="Script" id=10]
+[ext_resource path="res://scenes/game/scripts/GameWorld.cs" type="Script" id=1]
+[ext_resource path="res://assets/meshlib.tres" type="MeshLibrary" id=2]
+[ext_resource path="res://assets/world/naturePack_111.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://assets/world/naturePack_112.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://assets/world/naturePack_114.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://assets/world/naturePack_107.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://assets/world/naturePack_077.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://assets/world/naturePack_065.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://scenes/game/scripts/Player.cs" type="Script" id=9]
+[ext_resource path="res://assets/player/basicCharacter.tres" type="ArrayMesh" id=10]
+[ext_resource path="res://scenes/game/scripts/PlayerCam.cs" type="Script" id=11]
+[ext_resource path="res://scenes/ui/scripts/DialogBox.cs" type="Script" id=12]
+[ext_resource path="res://assets/ui/default_theme.tres" type="Theme" id=13]
+[ext_resource path="res://assets/ui/down.png" type="Texture" id=14]
 
-[sub_resource type="ConcavePolygonShape" id=2]
+[sub_resource type="ConcavePolygonShape" id=1]
 
 data = PoolVector3Array( 1.2773, 1.3877, -1.1631, 1.335, 3.2012, -1.4824, 1.335, 3.2012, -1.1328, 1.335, 3.2012, -1.4824, 1.2773, 1.3877, -1.1631, 1.2773, 1.3877, -1.4033, 1.335, 3.2012, -1.4824, 1.2773, 1.3877, -1.4033, 1.2705, 1.1475, -1.4033, 1.2705, 1.1475, -1.4033, 1.2344, 0, -1.582, 1.335, 3.2012, -1.4824, 1.2705, 1.1475, -1.1631, 1.2344, 0, -1.582, 1.2705, 1.1475, -1.4033, 1.2705, 1.1475, -1.1631, 1.2344, 0, -1.0322, 1.2344, 0, -1.582, 1.2344, 0, -1.0322, 1.2705, 1.1475, -1.1631, 1.335, 3.2012, -1.1328, 1.3975, 2.1445, -1.0996, 1.2344, 0, -1.0322, 1.335, 3.2012, -1.1328, 1.2344, 0, -1.0322, 1.3975, 2.1445, -1.0996, 1.627, 2.1445, -1.0996, 1.627, 2.1445, -1.0996, 1.7852, 0, -1.0322, 1.2344, 0, -1.0322, 1.7852, 0, -1.0322, 1.627, 2.1445, -1.0996, 1.6846, 3.2012, -1.1328, 1.6992, 2.7305, -1.1982, 1.7852, 0, -1.0322, 1.6846, 3.2012, -1.1328, 1.7852, 0, -1.0322, 1.6992, 2.7305, -1.1982, 1.7852, 0, -1.582, 1.7852, 0, -1.582, 1.2344, 0, -1.0322, 1.7852, 0, -1.0322, 1.2344, 0, -1.0322, 1.7852, 0, -1.582, 1.2344, 0, -1.582, 1.4219, 0.77, -1.5586, 1.2344, 0, -1.582, 1.7852, 0, -1.582, 1.2344, 0, -1.582, 1.4219, 0.77, -1.5586, 1.335, 3.2012, -1.4824, 1.335, 3.2012, -1.4824, 1.4219, 0.77, -1.5586, 1.4219, 0.9897, -1.5518, 1.335, 3.2012, -1.4824, 1.4219, 0.9897, -1.5518, 1.6416, 0.9897, -1.5518, 1.6416, 0.9897, -1.5518, 1.6846, 3.2012, -1.4824, 1.335, 3.2012, -1.4824, 1.6416, 0.77, -1.5586, 1.6846, 3.2012, -1.4824, 1.6416, 0.9897, -1.5518, 1.6416, 0.77, -1.5586, 1.7852, 0, -1.582, 1.6846, 3.2012, -1.4824, 1.7852, 0, -1.582, 1.6416, 0.77, -1.5586, 1.4219, 0.77, -1.5586, 1.6416, 0.77, -1.5586, 1.458, 0.8154, -1.8467, 1.4219, 0.77, -1.5586, 1.458, 0.8154, -1.8467, 1.6416, 0.77, -1.5586, 1.6055, 0.8154, -1.8467, 1.6055, 0.8154, -1.8467, 1.458, 0.9629, -1.8428, 1.458, 0.8154, -1.8467, 1.458, 0.9629, -1.8428, 1.6055, 0.8154, -1.8467, 1.6055, 0.9629, -1.8428, 1.6416, 0.9897, -1.5518, 1.458, 0.9629, -1.8428, 1.6055, 0.9629, -1.8428, 1.458, 0.9629, -1.8428, 1.6416, 0.9897, -1.5518, 1.4219, 0.9897, -1.5518, 1.4219, 0.77, -1.5586, 1.458, 0.9629, -1.8428, 1.4219, 0.9897, -1.5518, 1.458, 0.9629, -1.8428, 1.4219, 0.77, -1.5586, 1.458, 0.8154, -1.8467, 1.6055, 0.9629, -1.8428, 1.6416, 0.77, -1.5586, 1.6416, 0.9897, -1.5518, 1.6416, 0.77, -1.5586, 1.6055, 0.9629, -1.8428, 1.6055, 0.8154, -1.8467, 1.7852, 0, -1.582, 1.6934, 2.9199, -1.3887, 1.6846, 3.2012, -1.4824, 1.7852, 0, -1.582, 1.6992, 2.7305, -1.3887, 1.6934, 2.9199, -1.3887, 1.7852, 0, -1.582, 1.6992, 2.7305, -1.1982, 1.6992, 2.7305, -1.3887, 1.6992, 2.7305, -1.1982, 1.998, 2.7617, -1.3662, 1.6992, 2.7305, -1.3887, 1.998, 2.7617, -1.3662, 1.6992, 2.7305, -1.1982, 1.998, 2.7617, -1.2197, 1.9932, 2.9082, -1.2197, 1.998, 2.7617, -1.3662, 1.998, 2.7617, -1.2197, 1.998, 2.7617, -1.3662, 1.9932, 2.9082, -1.2197, 1.9932, 2.9082, -1.3662, 1.6934, 2.9199, -1.3887, 1.998, 2.7617, -1.3662, 1.9932, 2.9082, -1.3662, 1.998, 2.7617, -1.3662, 1.6934, 2.9199, -1.3887, 1.6992, 2.7305, -1.3887, 1.9932, 2.9082, -1.2197, 1.6934, 2.9199, -1.3887, 1.9932, 2.9082, -1.3662, 1.6934, 2.9199, -1.3887, 1.9932, 2.9082, -1.2197, 1.6934, 2.9199, -1.1982, 1.6934, 2.9199, -1.1982, 1.6846, 3.2012, -1.4824, 1.6934, 2.9199, -1.3887, 1.6934, 2.9199, -1.1982, 1.6846, 3.2012, -1.1328, 1.6846, 3.2012, -1.4824, 1.6846, 3.2012, -1.1328, 1.6934, 2.9199, -1.1982, 1.6992, 2.7305, -1.1982, 1.6934, 2.9199, -1.1982, 1.998, 2.7617, -1.2197, 1.6992, 2.7305, -1.1982, 1.998, 2.7617, -1.2197, 1.6934, 2.9199, -1.1982, 1.9932, 2.9082, -1.2197, 2.0977, 3.2012, -2.3262, 1.6846, 3.2012, -1.4824, 1.6846, 3.2012, -1.1328, 2.0977, 3.2012, -2.3262, 1.335, 3.2012, -1.4824, 1.6846, 3.2012, -1.4824, 0.9209, 3.2012, -2.3262, 1.335, 3.2012, -1.4824, 2.0977, 3.2012, -2.3262, 0.9209, 3.2012, -2.3262, 0.9209, 3.2012, -0.2876, 1.335, 3.2012, -1.4824, 0.9209, 3.2012, -0.2876, 0.9209, 3.2012, -2.3262, 0.332, 3.2012, -1.3076, 0, 3.8203, -1.3076, 0.9209, 3.2012, -0.2876, 0.332, 3.2012, -1.3076, 0.9209, 3.2012, -0.2876, 0, 3.8203, -1.3076, 0.7549, 3.8203, 0, 2.2637, 3.8203, 0, 0.9209, 3.2012, -0.2876, 0.7549, 3.8203, 0, 0.9209, 3.2012, -0.2876, 2.2637, 3.8203, 0, 2.0977, 3.2012, -0.2876, 1.335, 3.2012, -1.1328, 0.9209, 3.2012, -0.2876, 2.0977, 3.2012, -0.2876, 0.9209, 3.2012, -0.2876, 1.335, 3.2012, -1.1328, 1.335, 3.2012, -1.4824, 1.335, 3.2012, -1.1328, 2.0977, 3.2012, -0.2876, 1.6846, 3.2012, -1.1328, 1.3975, 2.373, -1.1064, 1.335, 3.2012, -1.1328, 1.6846, 3.2012, -1.1328, 1.3975, 2.1445, -1.0996, 1.335, 3.2012, -1.1328, 1.3975, 2.373, -1.1064, 1.4287, 2.3535, -0.7661, 1.3975, 2.1445, -1.0996, 1.3975, 2.373, -1.1064, 1.3975, 2.1445, -1.0996, 1.4287, 2.3535, -0.7661, 1.4287, 2.1855, -0.7607, 1.4287, 2.1855, -0.7607, 1.627, 2.1445, -1.0996, 1.3975, 2.1445, -1.0996, 1.627, 2.1445, -1.0996, 1.4287, 2.1855, -0.7607, 1.5957, 2.1855, -0.7607, 1.5957, 2.3535, -0.7661, 1.627, 2.1445, -1.0996, 1.5957, 2.1855, -0.7607, 1.627, 2.1445, -1.0996, 1.5957, 2.3535, -0.7661, 1.627, 2.373, -1.1064, 1.6846, 3.2012, -1.1328, 1.627, 2.1445, -1.0996, 1.627, 2.373, -1.1064, 1.6846, 3.2012, -1.1328, 1.627, 2.373, -1.1064, 1.3975, 2.373, -1.1064, 1.627, 2.373, -1.1064, 1.4287, 2.3535, -0.7661, 1.3975, 2.373, -1.1064, 1.4287, 2.3535, -0.7661, 1.627, 2.373, -1.1064, 1.5957, 2.3535, -0.7661, 1.5957, 2.3535, -0.7661, 1.4287, 2.1855, -0.7607, 1.4287, 2.3535, -0.7661, 1.4287, 2.1855, -0.7607, 1.5957, 2.3535, -0.7661, 1.5957, 2.1855, -0.7607, 1.6846, 3.2012, -1.1328, 2.0977, 3.2012, -0.2876, 2.0977, 3.2012, -2.3262, 2.0977, 3.2012, -2.3262, 2.0977, 3.2012, -0.2876, 2.6875, 3.2012, -1.3076, 3.0195, 3.8203, -1.3076, 2.0977, 3.2012, -2.3262, 2.6875, 3.2012, -1.3076, 2.0977, 3.2012, -2.3262, 3.0195, 3.8203, -1.3076, 2.2637, 3.8203, -2.6152, 0.7549, 3.8203, -2.6152, 2.0977, 3.2012, -2.3262, 2.2637, 3.8203, -2.6152, 2.0977, 3.2012, -2.3262, 0.7549, 3.8203, -2.6152, 0.9209, 3.2012, -2.3262, 0.7549, 3.8203, -2.6152, 0.332, 3.2012, -1.3076, 0.9209, 3.2012, -2.3262, 0.332, 3.2012, -1.3076, 0.7549, 3.8203, -2.6152, 0, 3.8203, -1.3076, 0.9282, 6, -2.3145, 0, 3.8203, -1.3076, 0.7549, 3.8203, -2.6152, 0, 3.8203, -1.3076, 0.9282, 6, -2.3145, 0.3472, 6, -1.3076, 0.9282, 6, -0.3005, 0, 3.8203, -1.3076, 0.3472, 6, -1.3076, 0, 3.8203, -1.3076, 0.9282, 6, -0.3005, 0.7549, 3.8203, 0, 2.0898, 6, -0.3005, 0.7549, 3.8203, 0, 0.9282, 6, -0.3005, 0.7549, 3.8203, 0, 2.0898, 6, -0.3005, 2.2637, 3.8203, 0, 2.0898, 6, -0.3005, 3.0195, 3.8203, -1.3076, 2.2637, 3.8203, 0, 3.0195, 3.8203, -1.3076, 2.0898, 6, -0.3005, 2.6719, 6, -1.3076, 2.0898, 6, -2.3145, 3.0195, 3.8203, -1.3076, 2.6719, 6, -1.3076, 3.0195, 3.8203, -1.3076, 2.0898, 6, -2.3145, 2.2637, 3.8203, -2.6152, 0.9282, 6, -2.3145, 2.2637, 3.8203, -2.6152, 2.0898, 6, -2.3145, 2.2637, 3.8203, -2.6152, 0.9282, 6, -2.3145, 0.7549, 3.8203, -2.6152, 0.9282, 6, -2.3145, 2.0898, 6, -2.3145, 1.5098, 6.8281, -1.3076, 0.9282, 6, -2.3145, 1.5098, 6.8281, -1.3076, 0.3472, 6, -1.3076, 0.3472, 6, -1.3076, 1.5098, 6.8281, -1.3076, 0.9282, 6, -0.3005, 1.5098, 6.8281, -1.3076, 2.0898, 6, -0.3005, 0.9282, 6, -0.3005, 1.5098, 6.8281, -1.3076, 2.6719, 6, -1.3076, 2.0898, 6, -0.3005, 2.0898, 6, -2.3145, 2.6719, 6, -1.3076, 1.5098, 6.8281, -1.3076, 3.0195, 3.8203, -1.3076, 2.0977, 3.2012, -0.2876, 2.2637, 3.8203, 0, 2.0977, 3.2012, -0.2876, 3.0195, 3.8203, -1.3076, 2.6875, 3.2012, -1.3076, 1.335, 3.2012, -1.1328, 1.2705, 1.1475, -1.1631, 1.2773, 1.3877, -1.1631, 0.9321, 1.1973, -1.2021, 1.2773, 1.3877, -1.1631, 1.2705, 1.1475, -1.1631, 1.2773, 1.3877, -1.1631, 0.9321, 1.1973, -1.2021, 0.937, 1.3584, -1.2021, 0.937, 1.3584, -1.3633, 1.2773, 1.3877, -1.1631, 0.937, 1.3584, -1.2021, 1.2773, 1.3877, -1.1631, 0.937, 1.3584, -1.3633, 1.2773, 1.3877, -1.4033, 0.9321, 1.1973, -1.3633, 1.2773, 1.3877, -1.4033, 0.937, 1.3584, -1.3633, 1.2773, 1.3877, -1.4033, 0.9321, 1.1973, -1.3633, 1.2705, 1.1475, -1.4033, 0.9321, 1.1973, -1.2021, 1.2705, 1.1475, -1.4033, 0.9321, 1.1973, -1.3633, 1.2705, 1.1475, -1.4033, 0.9321, 1.1973, -1.2021, 1.2705, 1.1475, -1.1631, 0.937, 1.3584, -1.3633, 0.9321, 1.1973, -1.2021, 0.9321, 1.1973, -1.3633, 0.9321, 1.1973, -1.2021, 0.937, 1.3584, -1.3633, 0.937, 1.3584, -1.2021 )
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="CapsuleShape" id=2]
 
 radius = 0.461373
 height = 0.765448
 
+[sub_resource type="Animation" id=3]
+
+resource_name = "Bounce"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("arrow:margin_top")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -50.0, -70.0, -57.0 ]
+}
+
 [node name="world" type="Spatial" index="0"]
+
+script = ExtResource( 1 )
 
 [node name="lights" type="Spatial" parent="." index="0"]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="lights" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 0.539928, 0.841711, 0, -0.841711, 0.539928, 0, 5.43885, 0 )
+transform = Transform( 1, 0, 0, 0, -0.545982, 0.837797, 0, -0.837797, -0.545982, 0, 5.43885, 0 )
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
-light_energy = 4.61
+light_energy = 5.0
 light_indirect_energy = 1.09
 light_negative = false
 light_specular = 0.5
@@ -52,21 +77,36 @@ directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
 _sections_unfolded = [ "Directional Shadow", "Light", "Shadow" ]
 
+[node name="BakedLightmap" type="BakedLightmap" parent="lights" index="1"]
+
+layers = 1
+bake_cell_size = 0.25
+bake_quality = 2
+bake_mode = 0
+bake_propagation = 1.0
+bake_energy = 1.0
+bake_hdr = true
+bake_extents = Vector3( 10, 10, 10 )
+capture_cell_size = 0.5
+image_path = "."
+light_data = null
+_sections_unfolded = [ "Bake", "Capture", "Data" ]
+
 [node name="map" type="Spatial" parent="." index="1"]
 
 [node name="terrain" type="GridMap" parent="map" index="0"]
 
-theme = ExtResource( 1 )
+theme = ExtResource( 2 )
 cell_size = Vector3( 3, 3, 3 )
-cell_octant_size = 8
-cell_center_x = true
+cell_octant_size = 4
+cell_center_x = false
 cell_center_y = false
-cell_center_z = true
+cell_center_z = false
 cell_scale = 1.0
 collision_layer = 1
 collision_mask = 1
 data = {
-"cells": PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 536870912, 5, 0, 0, 65531, 0, 0, 65532, 0, 0, 65535, 0, -1610612736, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 536870912, 4, 1, 536870912, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 536870912, 0, 2, 0, 1, 2, 536870912, 2, 2, 0, 3, 2, -1610612736, 4, 2, -1610612736, 65535, 2, 0, 0, 3, 0, 1, 3, 536870912, 2, 3, 0, 3, 3, 0, 1, 65532, 0, 2, 65532, 0, 3, 65532, 0, 0, 65533, 536870912, 1, 65533, 0, 3, 65533, 0, 65532, 65533, 0, 65533, 65533, 0, 65534, 65533, 0, 0, 65534, 0, 1, 65534, 0, 2, 65534, 536870912, 3, 65534, 0, 65531, 65534, 0, 65534, 65534, 0, 65535, 65534, 0, 0, 65535, 0, 65531, 65535, 0, 65534, 65535, 0, 65535, 65535, 0 )
+"cells": PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 1073741824, 4, 0, 0, 5, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 1, 0, 1, 1, 536870912, 2, 1, 0, 3, 1, 0, 4, 1, 0, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 65532, 3, 0, 65533, 3, 536870912, 65534, 3, 536870912, 65535, 3, 0, 0, 4, 0, 1, 4, -1610612736, 65535, 4, 536870912, 0, 5, 0, 1, 5, -1610612736, 0, 65531, 0, 1, 65531, -1610612736, 0, 65532, 0, 1, 65532, 0, 2, 65532, 0, 3, 65532, 0, 65534, 65532, -1610612736, 65535, 65532, -1610612736, 0, 65533, 0, 1, 65533, 0, 2, 65533, -1610612736, 3, 65533, 536870912, 65532, 65533, 0, 65533, 65533, 536870912, 65534, 65533, 0, 65535, 65533, -1610612736, 0, 65534, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0, 4, 65534, -1610612736, 65531, 65534, 0, 65532, 65534, -1610612736, 65533, 65534, -1610612736, 65534, 65534, 0, 65535, 65534, 0, 0, 65535, 0, 1, 65535, -1610612736, 2, 65535, 0, 3, 65535, -1610612736, 4, 65535, -1610612736, 65531, 65535, 0, 65532, 65535, -1610612736, 65533, 65535, -1610612736, 65534, 65535, 0, 65535, 65535, 0 )
 }
 _sections_unfolded = [ "Cell" ]
 __meta__ = {
@@ -74,7 +114,27 @@ __meta__ = {
 "_editor_floor_": Vector3( 0, 0, 0 )
 }
 
-[node name="objs" type="Spatial" parent="map" index="1"]
+[node name="terrain2" type="GridMap" parent="map" index="1"]
+
+theme = ExtResource( 2 )
+cell_size = Vector3( 3, 3, 3 )
+cell_octant_size = 4
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+cell_scale = 1.0
+collision_layer = 1
+collision_mask = 1
+data = {
+"cells": PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 65531, 0, 0, 65532, 0, -1610612736, 65533, 0, 0, 65534, 0, 0, 65535, 0, -1610612736, 0, 1, -1610612736, 1, 1, -1610612736, 2, 1, 0, 3, 1, 0, 4, 1, -1610612736, 65532, 1, -1610612736, 65533, 1, 0, 65534, 1, -1610612736, 65535, 1, 0, 0, 2, 0, 1, 2, -1610612736, 2, 2, 0, 3, 2, 0, 4, 2, 0, 65532, 2, -1610612736, 65533, 2, -1610612736, 65534, 2, 0, 65535, 2, 536870912, 0, 3, 0, 1, 3, 0, 2, 3, -1610612736, 3, 3, 0, 65532, 3, -1610612736, 65533, 3, 0, 65534, 3, 0, 65535, 3, 0, 0, 4, 0, 1, 4, 0, 65535, 4, 536870912, 0, 5, 0, 1, 5, 0, 65532, 6, 0, 0, 65531, 536870912, 1, 65531, 0, 0, 65532, 0, 1, 65532, 0, 2, 65532, 0, 3, 65532, 0, 65534, 65532, 0, 65535, 65532, 0, 0, 65533, 0, 1, 65533, 0, 2, 65533, 0, 3, 65533, 0, 65532, 65533, 0, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65534, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0, 4, 65534, 0, 65531, 65534, 536870912, 65532, 65534, 0, 65533, 65534, 0, 65534, 65534, 0, 65535, 65534, 0, 0, 65535, 0, 1, 65535, 0, 2, 65535, 0, 3, 65535, 0, 4, 65535, 1073741824, 65531, 65535, 0, 65532, 65535, 0, 65533, 65535, 0, 65534, 65535, 536870912, 65535, 65535, 0 )
+}
+_sections_unfolded = [ "Cell" ]
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="objs" type="Spatial" parent="map" index="2"]
 
 [node name="MeshInstance" type="MeshInstance" parent="map/objs" index="0"]
 
@@ -88,7 +148,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 2 )
+mesh = ExtResource( 3 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -107,7 +167,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 3 )
+mesh = ExtResource( 4 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -126,7 +186,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 4 )
+mesh = ExtResource( 5 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -134,7 +194,7 @@ material/2 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="map/objs" index="3"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.12529, 0.289324, 3.90201 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.12529, 0.265485, 3.90201 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -144,7 +204,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 5 )
+mesh = ExtResource( 6 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -164,9 +224,32 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 6 )
+mesh = ExtResource( 7 )
 skeleton = NodePath("..")
 material/0 = null
+
+[node name="OmniLight" type="OmniLight" parent="map/objs/MeshInstance5" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.834081, 0.527824, -0.957131 )
+layers = 1
+light_color = Color( 0.902344, 0.300653, 0.0916443, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Shadow" ]
 
 [node name="MeshInstance6" type="MeshInstance" parent="map/objs" index="5"]
 
@@ -180,7 +263,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 7 )
+mesh = ExtResource( 8 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -201,7 +284,7 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="map/objs/MeshInstance6/StaticBody2" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 disabled = false
 
 [node name="player" type="KinematicBody" parent="." index="2"]
@@ -218,12 +301,12 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="CollisionShape" type="CollisionShape" parent="player" index="0"]
 
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0.088052, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
@@ -239,7 +322,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 9 )
+mesh = ExtResource( 10 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -268,7 +351,247 @@ fov = 70.0
 size = 1.0
 near = 0.05
 far = 100.0
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="ui" type="Control" parent="." index="3"]
+
+pause_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="dialog_box" type="VBoxContainer" parent="ui" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = -612.0
+margin_right = -12.0
+margin_bottom = -12.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 20
+alignment = 2
+script = ExtResource( 12 )
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_constants" ]
+
+[node name="hbox" type="HBoxContainer" parent="ui/dialog_box" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 166.0
+margin_right = 1896.0
+margin_bottom = 366.0
+rect_min_size = Vector2( 0, 200 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 2
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="vbox" type="VBoxContainer" parent="ui/dialog_box/hbox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1696.0
+margin_right = 1896.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 10
+alignment = 2
+_sections_unfolded = [ "Margin", "Rect", "custom_constants" ]
+
+[node name="button_a" type="Button" parent="ui/dialog_box/hbox/vbox" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 69.0
+margin_right = 200.0
+margin_bottom = 106.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 13 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Option A"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme" ]
+
+[node name="button_b" type="Button" parent="ui/dialog_box/hbox/vbox" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 116.0
+margin_right = 200.0
+margin_bottom = 153.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 13 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Option B"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme" ]
+
+[node name="button_c" type="Button" parent="ui/dialog_box/hbox/vbox" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 163.0
+margin_right = 200.0
+margin_bottom = 200.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 13 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Option C"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme" ]
+
+[node name="text_panel" type="PanelContainer" parent="ui/dialog_box" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 386.0
+margin_right = 1896.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 13 )
+_sections_unfolded = [ "Theme" ]
+
+[node name="text" type="RichTextLabel" parent="ui/dialog_box/text_panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1889.0
+margin_bottom = 207.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 0, 200 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 13 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Das ist ein Text."
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Theme" ]
+
+[node name="arrow" type="TextureRect" parent="ui/dialog_box/text_panel/text" index="1"]
+
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -51.1362
+margin_right = 100.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 14 )
+stretch_mode = 0
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ui/dialog_box/text_panel/text" index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Bounce = SubResource( 3 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[connection signal="tree_exiting" from="." to="." method="OnTreeExiting"]
+
+[connection signal="pressed" from="ui/dialog_box/hbox/vbox/button_a" to="ui/dialog_box" method="OnButtonPressed" binds= [ 0 ]]
 
 

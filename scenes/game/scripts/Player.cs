@@ -19,6 +19,22 @@ public class Player : KinematicBody
 		Input.SetMouseMode(Godot.Input.MouseMode.Captured);
 	}
 
+	public override void _Process(float delta)
+	{
+		if (Input.IsActionJustPressed("interact"))
+		{
+			var dialog = (DialogBox)GetNode("/root/world/ui/dialog_box");
+			dialog.DisplayDialog(new Dialog
+			{
+				Text = "Das ist ein Test-Dialog.",
+				Options = new System.Collections.Generic.Dictionary<string, Dialog>() {
+					{ "Ja", new Dialog { Text = "Ok, weitermachen.\nNeue Zeile" } },
+					{ "Nein", null },
+				},
+			});
+		}
+	}
+
 	public override void _PhysicsProcess(float delta)
 	{
 		Vector3 moveVel = Vector3.Zero;
