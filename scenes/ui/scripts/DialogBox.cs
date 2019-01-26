@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 public class DialogBox : VBoxContainer
@@ -21,6 +22,7 @@ public class DialogBox : VBoxContainer
 	float visibleChars;
 	TextState state = TextState.None;
 	Dialog currentDialog;
+	IList<DialogOption> currentOptions;
 
 	public override void _Ready()
 	{
@@ -34,10 +36,11 @@ public class DialogBox : VBoxContainer
 	{
 		currentDialog = dialog;
 		currentDialog.Script?.Invoke();
+		currentOptions = dialog.Options.Where(o => o.Condition == null || o.Condition.Invoke()).ToList();
 		textBox.Text = currentDialog.Text;
-		for (int i = 0; i < currentDialog.Options.Count && i < buttons.Length; i++)
+		for (int i = 0; i < currentOptions.Count && i < buttons.Length; i++)
 		{
-			buttons[i].Text = currentDialog.Options.ElementAt(i).Key;
+			buttons[i].Text = currentOptions[i].Text;
 		}
 		for (int i = 0; i < buttons.Length; i++)
 		{
@@ -65,14 +68,14 @@ public class DialogBox : VBoxContainer
 			if (visibleChars >= textBox.Text.Length)
 			{
 				state = TextState.Waiting;
-				if (currentDialog.Options.Count == 0)
+				if (currentOptions.Count == 0)
 				{
 					arrow.Visible = true;
 					arrowAnim.Play("Bounce");
 				}
 				else
 				{
-					for (int i = 0; i < currentDialog.Options.Count && i < buttons.Length; i++)
+					for (int i = 0; i < currentOptions.Count && i < buttons.Length; i++)
 					{
 						buttons[i].Visible = true;
 					}
@@ -81,7 +84,7 @@ public class DialogBox : VBoxContainer
 		}
 		else if (state == TextState.Waiting)
 		{
-			if (Input.IsActionJustPressed("ui_accept") && currentDialog.Options.Count == 0)
+			if (Input.IsActionJustPressed("ui_accept") && currentOptions.Count == 0)
 			{
 				arrow.Visible = false;
 				arrowAnim.Stop();
@@ -109,6 +112,6 @@ public class DialogBox : VBoxContainer
 	public void OnButtonPressed(int index)
 	{
 		if (state != TextState.Waiting) return;
-		DisplayOrExit(currentDialog.Options.ElementAt(index).Value);
+		DisplayOrExit(currentOptions[index].Next);
 	}
 }

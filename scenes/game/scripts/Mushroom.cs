@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public class Mushroom : BaseInteractable
 {
@@ -12,9 +13,10 @@ public class Mushroom : BaseInteractable
 		return new Dialog
 		{
 			Text = "Ein Pilz.\nAufheben?",
-			Options = new System.Collections.Generic.Dictionary<string, Dialog> {
-				{ "Ja", new Dialog { Text = "Du hebst den Pilz auf.", Script = Script_Pickup } },
-				{ "Nein", null },
+			Options = new List<DialogOption> {
+				new DialogOption { Text = "Ja", Next = new Dialog { Text = "Du hebst den Pilz auf.", Script = Script_Pickup } },
+				new DialogOption { Text = "Nein" },
+				new DialogOption { Text = "Vielleicht", Condition = () => { return new Random().NextDouble() > 0.5; } },
 			}
 		};
 	}
