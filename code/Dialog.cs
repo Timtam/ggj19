@@ -78,18 +78,6 @@ public static class Dialogs
 		Script = () => { DialogTriggers.GrassSeen = true; }
 	};
 
-	public static Dialog MidnightShroom = new Dialog
-	{
-		Script = () =>
-		{
-			MidnightShroom.Text = "L: Diesen schönen blauen Mitternachtspilz kenne ich schon aus meinem Grimoire.";
-			if (DialogTriggers.HasListTree) // TODO: Correct list
-			{
-				MidnightShroom.Text += " Der steht außerdem auf meiner Liste.";
-			}
-		}
-	};
-
 	public static Dialog Water = new Dialog
 	{
 		Text = "L: Das klare Flusswasser benutzen wir normalerweise zum Kochen von leckeren Kräutertees. Aber es ist auch die perfekte Basis für einen Zaubertrank."

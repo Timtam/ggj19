@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Mitternachtspilz.obj-e76332137663384ffbe36f1df8905dea.mesh"
+
+[deps]
+
+files=[ "res://.import/Mitternachtspilz.obj-e76332137663384ffbe36f1df8905dea.mesh" ]
+
+source_file="res://assets/world/obj/Mitternachtspilz.obj"
+dest_files=[ "res://.import/Mitternachtspilz.obj-e76332137663384ffbe36f1df8905dea.mesh", "res://.import/Mitternachtspilz.obj-e76332137663384ffbe36f1df8905dea.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )

@@ -40,7 +40,7 @@ public class Items
 		new Item { Name = "Holz", IconPath = "res://assets/ui/item/Holz.png" },
 		new Item { Name = "Steine", IconPath = "res://assets/ui/item/Stein.png" },
 		new Item { Name = "Stroh", IconPath = "res://assets/ui/item/Stroh.png" },
-		new Item { Name = "Pilze", IconPath = "res://assets/ui/item/Mitternachtspilz.png" },
+		new Item { Name = "Mitternachtspilz", IconPath = "res://assets/ui/item/Mitternachtspilz.png" },
 		new Item { Name = "Wasser", IconPath = "res://assets/ui/item/Wasser.png" },
 		new Item { Name = "Beeren", IconPath = "res://assets/ui/item/Beeren.png" },
 		new Item { Name = "Kräuter", IconPath = "res://assets/ui/item/Krauter.png" },
