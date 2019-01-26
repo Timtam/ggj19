@@ -52,6 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="code\Util.cs" />
     <Compile Include="code\Dialog.cs" />
+    <Compile Include="code\Items.cs" />
     <Compile Include="scenes\game\scripts\GameWorld.cs" />
     <Compile Include="scenes\game\scripts\BaseInteractable.cs" />
     <Compile Include="scenes\game\scripts\IInteractable.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="scenes\game\scripts\PlayerCam.cs" />
     <Compile Include="scenes\ui\scripts\DialogBox.cs" />
     <Compile Include="scenes\ui\scripts\Inventory.cs" />
+    <Compile Include="scenes\ui\scripts\InvItem.cs" />
     <Compile Include="scenes\ui\scripts\InvSlot.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -22,6 +22,6 @@ public class Mushroom : BaseInteractable
 	private void Script_Pickup()
 	{
 		this.QueueFree();
-		// TODO: Add to inventory
+		this.GetGameWorld().Inventory.AddItem(Items.GetItem("Pilze"));
 	}
 }

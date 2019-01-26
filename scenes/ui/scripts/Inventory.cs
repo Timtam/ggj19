@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Linq;
 
 public class Inventory : Panel
 {
@@ -14,6 +15,7 @@ public class Inventory : Panel
 		for (int i = 0; i < invSlots.Length; i++)
 		{
 			invSlots[i] = new InvSlot();
+			invSlots[i].Theme = invGrid.Theme;
 			invGrid.AddChild(invSlots[i]);
 		}
 	}
@@ -42,5 +44,17 @@ public class Inventory : Panel
 				Input.SetMouseMode(Input.MouseMode.Captured);
 			}
 		}
+	}
+
+	public void AddItem(Item item, int count = 1)
+	{
+		var slot = invSlots.FirstOrDefault(s => s.ContainsItem(item)) ?? invSlots.FirstOrDefault(s => s.IsEmpty());
+		if (slot == null)
+		{
+			GD.PrintErr($"No slot for item {item.Name}, discard");
+			return;
+		}
+
+		slot.AddItem(item, count);
 	}
 }
