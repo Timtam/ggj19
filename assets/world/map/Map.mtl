@@ -3,20 +3,28 @@
 newmtl default
 Kd 1 1 1
 
-newmtl natureKit-leaves
-Kd 0.45150324702263 0.6980391740799 0.33725491166115
-illum 7
-
 newmtl natureKit-wood
 Kd 1 0.68235301971436 0.43529409170151
 illum 7
 
-newmtl natureKit-_defaultMat
-Kd 1 1 1
-illum 7
-
 newmtl natureKit-leavesGreen
 Kd 0.35294118523598 0.76862752437592 0.71372550725937
+illum 7
+
+newmtl natureKit-leavesGreen_1
+Kd 0.35294118523598 0.76862752437592 0.71372550725937
+illum 7
+
+newmtl natureKit-water
+Kd 0.69117647409439 0.95788782835007 1
+illum 7
+
+newmtl natureKit-leaves
+Kd 0.45150324702263 0.6980391740799 0.33725491166115
+illum 7
+
+newmtl natureKit-_defaultMat
+Kd 1 1 1
 illum 7
 
 newmtl natureKit-leaves_1
@@ -27,58 +35,16 @@ newmtl natureKit-leavesFall
 Kd 0.94901961088181 0.55294120311737 0.14509800076485
 illum 7
 
-newmtl natureKit-water
-Kd 0.69117647409439 0.95788782835007 1
-illum 7
-
 newmtl natureKit-stone_7
 Kd 0.65882349014282 0.8078430891037 0.82745099067688
 illum 7
 
 newmtl natureKit-wood_1
 Kd 1 0.68235301971436 0.43529409170151
-Ks 1 1 1
-Ns 43.219
-illum 7
-
-newmtl natureKit-leavesGreen_1
-Kd 0.35294118523598 0.76862752437592 0.71372550725937
-Ks 1 1 1
-Ns 43.219
-illum 7
-
-newmtl natureKit-wood_2
-Kd 1 0.68235301971436 0.43529409170151
-Ks 1 1 1
-Ns 43.219
-illum 7
-
-newmtl natureKit-leavesGreen_2
-Kd 0.35294118523598 0.76862752437592 0.71372550725937
-Ks 1 1 1
-Ns 43.219
-illum 7
-
-newmtl natureKit-wood_3
-Kd 1 0.68235301971436 0.43529409170151
-Ks 1 1 1
-Ns 43.219
-illum 7
-
-newmtl natureKit-leavesGreen_3
-Kd 0.35294118523598 0.76862752437592 0.71372550725937
-Ks 1 1 1
-Ns 43.219
 illum 7
 
 newmtl natureKit-water_1
 Kd 0.69117647409439 0.95788782835007 1
-Ks 1 1 1
-Ns 43.219
-illum 7
-
-newmtl natureKit-leavesGreen_4
-Kd 0.35294118523598 0.76862752437592 0.71372550725937
 illum 7
 
 newmtl natureKit-woodLight
