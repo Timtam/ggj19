@@ -1,9 +1,9 @@
 Sound;Original File;Game File
-Unwetter;;
-Blitz;;
-Donner;;
-Wind;;
-Regen;;
+Unwetter;Loop gemixt;thunderstorm_loop
+Blitz;Loop gemixt;thunderstorm_loop
+Donner;Loop gemixt;thunderstorm_loop
+Wind;Loop gemixt;thunderstorm_loop
+Regen;Loop gemixt;thunderstorm_loop
 Haus kaputt;;
 Wasser / Fluss;;
 Wasserfall;;
