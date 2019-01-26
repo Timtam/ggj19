@@ -47,7 +47,7 @@ public class Items
 		new Item { Name = "Federn", IconPath = "res://assets/ui/item/Feder_rot.png" },
 		new Item { Name = "Kristall", IconPath = "res://assets/ui/item/Kristall_rosa.png" },
 		new Item { Name = "Blüten", IconPath = "res://assets/ui/item/Blute.png" },
-		new Item { Name = "Flügel" },
+		new Item { Name = "Flügel", IconPath = "res://assets/ui/item/Flugel.png" },
 		new Item { Name = "Zähne", IconPath = "res://assets/ui/item/Zahn.png" },
 		new Item { Name = "Spinnenaugen", IconPath = "res://assets/ui/item/Auge.png" },
 		new Item { Name = "Zutatenliste (Stärketrank)", IconPath = "res://assets/ui/item/Liste.png" },
