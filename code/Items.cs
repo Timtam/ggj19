@@ -21,7 +21,7 @@ public class Item
 			var newImage = new Image();
 			newImage.Create(40, 40, false, Image.Format.Rgba8);
 			newImage.Lock();
-			var dest = (image.GetSize() - new Vector2(40, 40)) / 2;
+			var dest = (new Vector2(40, 40) - image.GetSize()) / 2;
 			newImage.BlitRect(image, new Rect2(Vector2.Zero, image.GetSize()), dest);
 			newImage.Unlock();
 
@@ -36,16 +36,16 @@ public class Item
 
 public class Items
 {
-	static Item[] all_items = new Item[] {
-		new Item { Name = "Holz" },
-		new Item { Name = "Steine" },
-		new Item { Name = "Stroh" },
+	public static Item[] all_items = new Item[] {
+		new Item { Name = "Holz", IconPath = "res://assets/ui/item/Holz.png" },
+		new Item { Name = "Steine", IconPath = "res://assets/ui/item/Stein.png" },
+		new Item { Name = "Stroh", IconPath = "res://assets/ui/item/Stroh.png" },
 		new Item { Name = "Pilze" },
-		new Item { Name = "Wasser" },
-		new Item { Name = "Beeren" },
-		new Item { Name = "Kräuter" },
-		new Item { Name = "Federn" },
-		new Item { Name = "Kristall" },
+		new Item { Name = "Wasser", IconPath = "res://assets/ui/item/Wasser.png" },
+		new Item { Name = "Beeren", IconPath = "res://assets/ui/item/Beeren.png" },
+		new Item { Name = "Kräuter", IconPath = "res://assets/ui/item/Krauter.png" },
+		new Item { Name = "Federn", IconPath = "res://assets/ui/item/Feder_rot.png" },
+		new Item { Name = "Kristall", IconPath = "res://assets/ui/item/Kristall_rosa.png" },
 		new Item { Name = "Blüten" },
 		new Item { Name = "Flügel" },
 		new Item { Name = "Zähne" },

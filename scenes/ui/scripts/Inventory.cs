@@ -18,6 +18,11 @@ public class Inventory : Panel
 			invSlots[i].Theme = invGrid.Theme;
 			invGrid.AddChild(invSlots[i]);
 		}
+
+		foreach (var item in Items.all_items)
+		{
+			AddItem(item);
+		}
 	}
 
 	public override void _Input(InputEvent @event)
