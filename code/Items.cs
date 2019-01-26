@@ -12,7 +12,7 @@ public class Item
 	{
 		if (icon == null)
 		{
-			var rawIcon = ResourceLoader.Load(IconPath ?? "res://assets/ui/item/genericItem_color_155.png") as Texture;
+			var rawIcon = ResourceLoader.Load(IconPath ?? "res://assets/ui/item/question.png") as Texture;
 			var image = rawIcon.GetData();
 			image.Lock();
 			var scaleFactor = 40.0f / Math.Max(image.GetHeight(), image.GetWidth());
