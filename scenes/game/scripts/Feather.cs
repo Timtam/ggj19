@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Herbs : BaseInteractable
+public class Feather : BaseInteractable
 {
 	public override void _Ready()
 	{
@@ -10,18 +10,21 @@ public class Herbs : BaseInteractable
 
 	public override Dialog GetInteractionDialog()
 	{
-		var text = "L: Kräuter für Zaubertränke und Rituale kann man immer gebrauchen.";
+		var text = "L: Ein paar rote Federn, die wohl ein Rotkehlchen hier verloren hat.";
 		if (DialogTriggers.HasListTree) // TODO: Correct list
 		{
-			text += " [Diese brauche ich für Trank X.]";
+			text += " Rote Federn, roter Trank.";
+		}
+		else
+		{
+			text += " Ich nehme sie mit.";
 		}
 		return new Dialog
 		{
 			Text = text,
 			Script = () =>
 			{
-				Inventory.Instance.AddItem(Items.GetItem("Kräuter"));
-				this.QueueFree();
+				Inventory.Instance.AddItem(Items.GetItem("Federn"));
 			}
 		};
 	}

@@ -54,7 +54,11 @@
     <Compile Include="code\Dialog.cs" />
     <Compile Include="code\Items.cs" />
     <Compile Include="scenes\game\scripts\GameWorld.cs" />
+    <Compile Include="scenes\game\scripts\Crystal.cs" />
     <Compile Include="scenes\game\scripts\BaseInteractable.cs" />
+    <Compile Include="scenes\game\scripts\BerryBush.cs" />
+    <Compile Include="scenes\game\scripts\Feather.cs" />
+    <Compile Include="scenes\game\scripts\Flower.cs" />
     <Compile Include="scenes\game\scripts\Herbs.cs" />
     <Compile Include="scenes\game\scripts\IInteractable.cs" />
     <Compile Include="scenes\game\scripts\MidnightShroom.cs" />

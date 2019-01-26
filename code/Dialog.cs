@@ -83,66 +83,6 @@ public static class Dialogs
 		Text = "L: Das klare Flusswasser benutzen wir normalerweise zum Kochen von leckeren Kräutertees. Aber es ist auch die perfekte Basis für einen Zaubertrank."
 	};
 
-	public static Dialog Berries = new Dialog
-	{
-		Script = () =>
-		{
-			Berries.Text = "L: Aus diesen Beeren habe ich schon einmal einen duftenden Kuchen gebacken.";
-			if (DialogTriggers.HasListTree) // TODO: Correct list
-			{
-				Berries.Text += " Sie stehen auch auf meiner Liste.";
-			}
-			else
-			{
-				Berries.Text += " Ich nehme ein paar mit.";
-			}
-		}
-	};
-
-	public static Dialog Feather = new Dialog
-	{
-		Script = () =>
-		{
-			Feather.Text = "L: Ein paar rote Federn, die wohl ein Rotkehlchen hier verloren hat.";
-			if (DialogTriggers.HasListTree) // TODO: Correct list
-			{
-				Feather.Text += " Rote Federn, roter Trank.";
-			}
-			else
-			{
-				Feather.Text += " Ich nehme sie mit.";
-			}
-		}
-	};
-
-	public static Dialog Crystal = new Dialog
-	{
-		Script = () =>
-		{
-			Crystal.Text = "L: Dieser leuchtende Kristall nutzt die Hexe oft als Zutat für alle möglichen Zaubersprüche- und tränke.";
-			if (DialogTriggers.HasListTree) // TODO: Correct list
-			{
-				Crystal.Text += " Der steht auch auf der Zutatenliste.";
-			}
-			else
-			{
-				Crystal.Text += " Sie hat mir damit sogar schonmal die Zukunft vorhergesagt.";
-			}
-		}
-	};
-
-	public static Dialog Flower = new Dialog
-	{
-		Script = () =>
-		{
-			Flower.Text = "L: Was für eine wunderschöne Blüte. Die nehme ich mit nach Hause.";
-			if (DialogTriggers.HasListTree) // TODO: Correct list
-			{
-				Flower.Text = "L: Was für eine wunderschöne Blüte. Normalerweise würde ich sie für einen Blumenstrauß mit nach Hause nehmen, heute wird sie wohl eher als Zaubertrankzutat herhalten müssen.";
-			}
-		}
-	};
-
 	public static Dialog Witch = new Dialog
 	{
 		Text = "Hast du alles zusammen?",

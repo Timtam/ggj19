@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Kristall_rosa.obj-121b6069ffdbcc3c528195434109cdaa.mesh"
+
+[deps]
+
+files=[ "res://.import/Kristall_rosa.obj-121b6069ffdbcc3c528195434109cdaa.mesh" ]
+
+source_file="res://assets/world/obj/Kristall_rosa.obj"
+dest_files=[ "res://.import/Kristall_rosa.obj-121b6069ffdbcc3c528195434109cdaa.mesh", "res://.import/Kristall_rosa.obj-121b6069ffdbcc3c528195434109cdaa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.0001, 0.0001, 0.0001 )

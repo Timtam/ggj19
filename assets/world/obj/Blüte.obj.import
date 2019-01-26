@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Blüte.obj-4654c1f1481f0818eb6a10941c16cfa2.mesh"
+
+[deps]
+
+files=[ "res://.import/Blüte.obj-4654c1f1481f0818eb6a10941c16cfa2.mesh" ]
+
+source_file="res://assets/world/obj/Blüte.obj"
+dest_files=[ "res://.import/Blüte.obj-4654c1f1481f0818eb6a10941c16cfa2.mesh", "res://.import/Blüte.obj-4654c1f1481f0818eb6a10941c16cfa2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )
