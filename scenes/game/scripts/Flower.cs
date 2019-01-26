@@ -20,7 +20,8 @@ public class Flower : BaseInteractable
 			Text = text,
 			Script = () =>
 			{
-				Inventory.Instance.AddItem(Items.GetItem("Beeren"));
+				Inventory.Instance.AddItem(Items.GetItem("Blüten"));
+				this.QueueFree();
 			}
 		};
 	}

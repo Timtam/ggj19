@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Beerenbusch_alle.obj-764b12b73dfe7395df9d887c53c49809.mesh"
+
+[deps]
+
+files=[ "res://.import/Beerenbusch_alle.obj-764b12b73dfe7395df9d887c53c49809.mesh" ]
+
+source_file="res://assets/world/obj/Beerenbusch_alle.obj"
+dest_files=[ "res://.import/Beerenbusch_alle.obj-764b12b73dfe7395df9d887c53c49809.mesh", "res://.import/Beerenbusch_alle.obj-764b12b73dfe7395df9d887c53c49809.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.0002, 0.0002, 0.0002 )

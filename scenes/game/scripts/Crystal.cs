@@ -25,6 +25,7 @@ public class Crystal : BaseInteractable
 			Script = () =>
 			{
 				Inventory.Instance.AddItem(Items.GetItem("Kristall"));
+				this.QueueFree();
 			}
 		};
 	}

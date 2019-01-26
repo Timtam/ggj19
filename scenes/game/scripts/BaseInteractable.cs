@@ -3,6 +3,9 @@ using System;
 
 public abstract class BaseInteractable : Spatial, IInteractable
 {
+	protected int enterCounter = 0;
+	public bool Enabled = true;
+
 	protected void RegisterSignals()
 	{
 		var area = (Area)GetNode("Area");
@@ -12,17 +15,19 @@ public abstract class BaseInteractable : Spatial, IInteractable
 
 	public void OnBodyEntered(CollisionObject other)
 	{
-		if (other is Player player)
+		if (other is Player player && Enabled)
 		{
 			player.EnterInteractionArea(this);
+			enterCounter++;
 		}
 	}
 
 	public void OnBodyExited(CollisionObject other)
 	{
-		if (other is Player player)
+		if (other is Player player && (Enabled || enterCounter > 0))
 		{
 			player.ExitInteractionArea(this);
+			enterCounter--;
 		}
 	}
 

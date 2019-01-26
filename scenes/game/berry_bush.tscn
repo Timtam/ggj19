@@ -7,7 +7,7 @@
 
 extents = Vector3( 3, 2, 3 )
 
-[node name="berry_bush" type="MeshInstance" index="0"]
+[node name="berry_bush" type="MeshInstance"]
 
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
 layers = 1

@@ -25,6 +25,9 @@ public class BerryBush : BaseInteractable
 			Script = () =>
 			{
 				Inventory.Instance.AddItem(Items.GetItem("Beeren"));
+				this.Set("mesh", ResourceLoader.Load("res://assets/world/obj/Beerenbusch_alle.obj"));
+				this.Enabled = false;
+				GetNode("Area").EmitSignal("body_exited", this.GetGameWorld().Player);
 			}
 		};
 	}

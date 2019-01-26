@@ -25,6 +25,7 @@ public class Feather : BaseInteractable
 			Script = () =>
 			{
 				Inventory.Instance.AddItem(Items.GetItem("Federn"));
+				this.QueueFree();
 			}
 		};
 	}
