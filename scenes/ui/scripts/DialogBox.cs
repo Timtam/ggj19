@@ -16,6 +16,7 @@ public class DialogBox : VBoxContainer
 	RichTextLabel textBox;
 	Button[] buttons;
 	TextureRect arrow;
+	AnimationPlayer arrowAnim;
 
 	float visibleChars;
 	TextState state = TextState.None;
@@ -26,6 +27,7 @@ public class DialogBox : VBoxContainer
 		textBox = (RichTextLabel)GetNode("text_panel/text");
 		buttons = new[] { "a", "b", "c" }.Select(b => (Button)GetNode($"hbox/vbox/button_{b}")).ToArray();
 		arrow = (TextureRect)GetNode("text_panel/text/arrow");
+		arrowAnim = (AnimationPlayer)GetNode("text_panel/text/anim");
 	}
 
 	public void DisplayDialog(Dialog dialog)
@@ -66,6 +68,7 @@ public class DialogBox : VBoxContainer
 				if (currentDialog.Options.Count == 0)
 				{
 					arrow.Visible = true;
+					arrowAnim.Play("Bounce");
 				}
 				else
 				{
@@ -81,6 +84,7 @@ public class DialogBox : VBoxContainer
 			if (Input.IsActionJustPressed("ui_accept") && currentDialog.Options.Count == 0)
 			{
 				arrow.Visible = false;
+				arrowAnim.Stop();
 				DisplayOrExit(currentDialog.Next);
 			}
 		}
