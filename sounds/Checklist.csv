@@ -23,13 +23,15 @@ Zauberstab;;
 Zaubern;;
 Kombinieren;;
 Zauberkessel;;
-;;
+Wachstumstrank brauen;Cooking_Game_Power_Up_Water_01;growth_pot_brew
+Stärketrank brauen;Cooking_Game_Abilities_Water_Infuse_03;strength_pot_brew
+Trocknungstrank brauen;Cooking_Game_Power_Up_Water_02;dry_pot_brew
+Wachstumstrank einsetzen;Cooking_Game_Power_Up_Dish_Grow_03;growth_pot_use
+Stärketrank einsetzen;Cooking_Game_Power_Up_Speed_01;strength_pot_use
+Trocknungstrank einsetzen;Cooking_Game_Ingredient_Actions_Sprinkle_01;dry_pot_use
 Holz;;
 Stein;;
 Stroh;;
-Wachstumstrank;Cooking_Game_Power_Up_Dish_Grow_03;growth_potion
-Stärketrank;Cooking_Game_Power_Up_Speed_01;
-Trocknungstrank;Cooking_Game_Ingredient_Actions_Sprinkle_01;
 ;;
 Angreifen;;
 Getroffen werden;;
