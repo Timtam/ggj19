@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/thunderstorm_loop.ogg-ac424209d251a6af36a0b7126a96392c.oggstr"
+
+[deps]
+
+source_file="res://sounds/thunderstorm_loop.ogg"
+dest_files=[ "res://.import/thunderstorm_loop.ogg-ac424209d251a6af36a0b7126a96392c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
