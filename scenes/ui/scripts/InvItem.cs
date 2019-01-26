@@ -19,6 +19,9 @@ public class InvItem : TextureRect
 		this.MarginLeft = 12;
 		this.MarginTop = 12;
 
+		this.Connect("mouse_entered", this, nameof(OnMouseEntered));
+		this.Connect("mouse_exited", this, nameof(OnMouseExited));
+
 		countLabel = new Label();
 		countLabel.SetAlign(Label.AlignEnum.Right);
 		countLabel.SetValign(Label.VAlign.Bottom);
@@ -34,5 +37,15 @@ public class InvItem : TextureRect
 	public override void _Process(float delta)
 	{
 		countLabel.Text = $"{Count}";
+	}
+
+	public void OnMouseEntered()
+	{
+		this.GetGameWorld().Inventory.Tooltip.DisplayWithText(Item.Name);
+	}
+
+	public void OnMouseExited()
+	{
+		this.GetGameWorld().Inventory.Tooltip.Visible = false;
 	}
 }

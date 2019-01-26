@@ -8,11 +8,14 @@ public class Inventory : Panel
 	InvSlot[] invSlots;
 	bool isInInventory = false;
 
+	public Tooltip Tooltip;
+
 	public static Inventory Instance;
 
 	public override void _Ready()
 	{
 		invGrid = (GridContainer)GetNode("inv_grid");
+		Tooltip = (Tooltip)GetNode("tooltip_layer/tooltip_panel");
 		invSlots = new InvSlot[20];
 		for (int i = 0; i < invSlots.Length; i++)
 		{
