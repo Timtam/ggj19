@@ -4,7 +4,7 @@ Blitz;Loop gemixt;thunderstorm_loop
 Donner;Loop gemixt;thunderstorm_loop
 Wind;Loop gemixt;thunderstorm_loop
 Regen;Loop gemixt;thunderstorm_loop
-Haus kaputt;;
+Haus kaputt;Gemixt;home_destroyed
 Wasser / Fluss;;
 Wasserfall;;
 Wald;;
