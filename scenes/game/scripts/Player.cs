@@ -8,7 +8,7 @@ public class Player : KinematicBody
 	const float GRAVITY = -9.8f;
 	const float MOVE_SPEED = 6.0f;
 	const float MOUSE_SENSITIVITY = 0.0009f;
-	const float JUMP_SPEED = 5.0f;
+	const float JUMP_SPEED = 7.0f;
 
 	public float Health;
 
