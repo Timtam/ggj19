@@ -6,7 +6,7 @@ using System.Linq;
 public class Player : KinematicBody
 {
 	const float GRAVITY = -9.8f;
-	const float MOVE_SPEED = 10.0f;
+	const float MOVE_SPEED = 6.0f;
 	const float MOUSE_SENSITIVITY = 0.0009f;
 	const float JUMP_SPEED = 5.0f;
 
@@ -57,8 +57,11 @@ public class Player : KinematicBody
 			velocity.y = JUMP_SPEED;
 
 		velocity.y += GRAVITY * delta;
-		velocity.x = moveVel.x;
-		velocity.z = moveVel.z;
+		if (this.IsOnFloor())
+		{
+			velocity.x = moveVel.x;
+			velocity.z = moveVel.z;
+		}
 		velocity = MoveAndSlide(velocity, Vector3.Up, 0.05f, 4, Mathf.Deg2Rad(20));
 	}
 
