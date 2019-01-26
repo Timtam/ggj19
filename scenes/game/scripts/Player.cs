@@ -7,6 +7,7 @@ public class Player : KinematicBody
 {
 	const float GRAVITY = -9.8f;
 	const float MOVE_SPEED = 6.0f;
+	const float SPRINT_SPEED = 10.0f;
 	const float MOUSE_SENSITIVITY = 0.0009f;
 	const float JUMP_SPEED = 7.0f;
 
@@ -53,8 +54,9 @@ public class Player : KinematicBody
 		if (Input.IsActionPressed("movement_right"))
 			moveVec.x += 1;
 		moveVec = moveVec.Normalized();
-		moveVel += basis.x.Normalized() * moveVec.x * MOVE_SPEED;
-		moveVel += basis.z.Normalized() * moveVec.y * MOVE_SPEED;
+		float speed = Input.IsActionPressed("movement_sprint") ? SPRINT_SPEED : MOVE_SPEED;
+		moveVel += basis.x.Normalized() * moveVec.x * speed;
+		moveVel += basis.z.Normalized() * moveVec.y * speed;
 
 		if (this.IsOnFloor() && Input.IsActionJustPressed("jump"))
 			velocity.y = JUMP_SPEED;
