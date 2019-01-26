@@ -55,6 +55,7 @@
     <Compile Include="code\Items.cs" />
     <Compile Include="scenes\game\scripts\GameWorld.cs" />
     <Compile Include="scenes\game\scripts\BaseInteractable.cs" />
+    <Compile Include="scenes\game\scripts\Herbs.cs" />
     <Compile Include="scenes\game\scripts\IInteractable.cs" />
     <Compile Include="scenes\game\scripts\MidnightShroom.cs" />
     <Compile Include="scenes\game\scripts\Player.cs" />

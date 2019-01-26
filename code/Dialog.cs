@@ -99,18 +99,6 @@ public static class Dialogs
 		}
 	};
 
-	public static Dialog Herbs = new Dialog
-	{
-		Script = () =>
-		{
-			Herbs.Text = "L: Kräuter für Zaubertränke und Rituale kann man immer gebrauchen.";
-			if (DialogTriggers.HasListTree) // TODO: Correct list
-			{
-				Herbs.Text += " [Diese brauche ich für Trank X.]";
-			}
-		}
-	};
-
 	public static Dialog Feather = new Dialog
 	{
 		Script = () =>
