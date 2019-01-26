@@ -10,6 +10,9 @@ public class Player : KinematicBody
 	const float SPRINT_SPEED = 10.0f;
 	const float MOUSE_SENSITIVITY = 0.0009f;
 	const float JUMP_SPEED = 7.0f;
+	const float ACCELERATION = 4.0f;
+	const float ACCELERATION_WALL = 1.0f;
+	const float DECELERATION = 16.0f;
 
 	public float Health;
 
@@ -44,6 +47,7 @@ public class Player : KinematicBody
 		Vector3 moveVel = Vector3.Zero;
 
 		var basis = this.GlobalTransform.basis;
+		float speed = Input.IsActionPressed("movement_sprint") ? SPRINT_SPEED : MOVE_SPEED;
 		var moveVec = new Vector2();
 		if (Input.IsActionPressed("movement_forward"))
 			moveVec.y -= 1;
@@ -53,20 +57,23 @@ public class Player : KinematicBody
 			moveVec.x -= 1;
 		if (Input.IsActionPressed("movement_right"))
 			moveVec.x += 1;
-		moveVec = moveVec.Normalized();
-		float speed = Input.IsActionPressed("movement_sprint") ? SPRINT_SPEED : MOVE_SPEED;
-		moveVel += basis.x.Normalized() * moveVec.x * speed;
-		moveVel += basis.z.Normalized() * moveVec.y * speed;
+		moveVel += basis.x.Normalized() * moveVec.x;
+		moveVel += basis.z.Normalized() * moveVec.y;
+		moveVel.y = 0;
+		moveVel = moveVel.Normalized() * speed;
+
+		var hVelocity = velocity;
+		hVelocity.y = 0;
+		var accel = (moveVel.Dot(hVelocity) > 0) ? (IsOnWall() ? ACCELERATION_WALL : ACCELERATION) : DECELERATION;
+		hVelocity = hVelocity.LinearInterpolate(moveVel, accel * delta);
+
 
 		if (this.IsOnFloor() && Input.IsActionJustPressed("jump"))
 			velocity.y = JUMP_SPEED;
 
 		velocity.y += GRAVITY * delta;
-		if (this.IsOnFloor())
-		{
-			velocity.x = moveVel.x;
-			velocity.z = moveVel.z;
-		}
+		velocity.x = hVelocity.x;
+		velocity.z = hVelocity.z;
 		velocity = MoveAndSlide(velocity, Vector3.Up, 0.05f, 4, Mathf.Deg2Rad(20));
 	}
 
