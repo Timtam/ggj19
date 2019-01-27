@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mop_attack_2.ogg-06ed0464d8467ac04d892359003733da.oggstr"
+
+[deps]
+
+source_file="res://sounds/mop_attack_2.ogg"
+dest_files=[ "res://.import/mop_attack_2.ogg-06ed0464d8467ac04d892359003733da.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
