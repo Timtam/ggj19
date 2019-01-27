@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Linq;
 
 public abstract class BaseInteractable : Spatial, IInteractable
 {
@@ -8,16 +9,21 @@ public abstract class BaseInteractable : Spatial, IInteractable
 
 	protected void RegisterSignals()
 	{
-		var area = (Area)GetNode("Area");
-		area.Connect("body_entered", this, nameof(OnBodyEntered));
-		area.Connect("body_exited", this, nameof(OnBodyExited));
+		foreach (var area in GetChildren().Select(o => o as Area).Where(a => a != null))
+		{
+			area.Connect("body_entered", this, nameof(OnBodyEntered));
+			area.Connect("body_exited", this, nameof(OnBodyExited));
+		}
 	}
 
 	public void OnBodyEntered(CollisionObject other)
 	{
 		if (other is Player player && Enabled)
 		{
-			player.EnterInteractionArea(this);
+			if (enterCounter == 0)
+			{
+				player.EnterInteractionArea(this);
+			}
 			enterCounter++;
 		}
 	}
@@ -26,8 +32,11 @@ public abstract class BaseInteractable : Spatial, IInteractable
 	{
 		if (other is Player player && (Enabled || enterCounter > 0))
 		{
-			player.ExitInteractionArea(this);
 			enterCounter--;
+			if (enterCounter == 0)
+			{
+				player.ExitInteractionArea(this);
+			}
 		}
 	}
 

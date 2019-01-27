@@ -78,11 +78,6 @@ public static class Dialogs
 		Script = () => { DialogTriggers.GrassSeen = true; }
 	};
 
-	public static Dialog Water = new Dialog
-	{
-		Text = "L: Das klare Flusswasser benutzen wir normalerweise zum Kochen von leckeren Kräutertees. Aber es ist auch die perfekte Basis für einen Zaubertrank."
-	};
-
 	public static Dialog Witch = new Dialog
 	{
 		Text = "Hast du alles zusammen?",
