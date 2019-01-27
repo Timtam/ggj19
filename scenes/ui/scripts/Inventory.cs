@@ -65,6 +65,19 @@ public class Inventory : Panel
 		slot.AddItem(item, count);
 	}
 
+	public void RemoveItems(params string[] itemNames)
+	{
+		foreach (var name in itemNames)
+		{
+			var item = Items.GetItem(name);
+			foreach (var slot in invSlots)
+			{
+				if (slot.ContainsItem(item))
+					slot.RemoveItem(item, 1);
+			}
+		}
+	}
+
 	public bool HasFinalItems()
 	{
 		bool hasTree = false, hasRock = false, hasGrass = false;
@@ -75,5 +88,19 @@ public class Inventory : Panel
 			if (slot.ContainsItem(Items.GetItem("Stroh"))) hasGrass = true;
 		}
 		return hasTree && hasRock && hasGrass;
+	}
+
+	public bool HasItems(params string[] itemNames)
+	{
+		var has = new bool[itemNames.Length];
+		var items = itemNames.Select(n => Items.GetItem(n)).ToArray();
+		foreach (var slot in invSlots)
+		{
+			for (int i = 0; i < items.Length; i++)
+			{
+				if (slot.ContainsItem(items[i])) has[i] = true;
+			}
+		}
+		return has.All(b => b);
 	}
 }

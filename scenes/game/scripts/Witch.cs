@@ -28,7 +28,7 @@ public class Witch : BaseInteractable
 							Text = "L: Das kann ich gerne alles besorgen gehen, aber wo finde ich die Sachen denn?",
 							Next = new Dialog
 							{
-								Text = "H : Gutes Holz gibt es auf einer Lichtung im Osten. Steine findest du am Berg im Südosten und Gras für Stroh solltest du am See im Süden bekommen.",
+								Text = "H : Gutes Holz gibt es auf einer Lichtung im Osten. Steine findest du am Berg im Nordosten und Gras für Stroh solltest du am See im Norden bekommen.",
 								Next = new Dialog
 								{
 									Text = "L: Alles klar, ich schau mal, dass ich das alles besorgen kann.",
@@ -43,6 +43,7 @@ public class Witch : BaseInteractable
 				}
 			};
 		}
+
 		return new Dialog
 		{
 			Text = "Hast du alles zusammen?",
@@ -68,6 +69,44 @@ public class Witch : BaseInteractable
 				},
 				new DialogOption
 				{
+					Condition = () => DialogTriggers.SmallTreeSeen && DialogTriggers.HasListTree && !DialogTriggers.GrowthPotion,
+					Text = "Baum",
+					Next = new Dialog
+					{
+						Text = "H: Hast du alle Zutaten für den Wachstumstrank zusammen?",
+						Options = new List<DialogOption>
+						{
+							new DialogOption
+							{
+								Text = "Nein",
+								Next = new Dialog
+								{
+									Text = "H: Dann komm gerne später wieder, wenn du alles beisammen hast. Ich räume hier noch weiter auf."
+								}
+							},
+							new DialogOption
+							{
+								Condition = () => Inventory.Instance.HasItems("Wasser", "Flügel", "Beeren", "Kristall"),
+								Text = "Ja",
+								Next = new Dialog
+								{
+									Text = "H: Dann kann ich dir jetzt den Trank brauen.",
+									Next = new Dialog
+									{
+										Text = "H: Bitteschön.",
+										Script = () =>
+										{
+											Inventory.Instance.RemoveItems("Wasser", "Flügel", "Beeren", "Kristall");
+											DialogTriggers.GrowthPotion = true;
+										}
+									}
+								}
+							},
+						}
+					}
+				},
+				new DialogOption
+				{
 					Condition = () => DialogTriggers.BigRockSeen && !DialogTriggers.HasListRock,
 					Text = "Stein",
 					Next = new Dialog
@@ -81,6 +120,44 @@ public class Witch : BaseInteractable
 								DialogTriggers.HasListRock = true;
 								Inventory.Instance.AddItem(Items.GetItem("Zutatenliste (Stärketrank)"));
 							}
+						}
+					}
+				},
+				new DialogOption
+				{
+					Condition = () => DialogTriggers.BigRockSeen && DialogTriggers.HasListRock && !DialogTriggers.StrengthPotion,
+					Text = "Stein",
+					Next = new Dialog
+					{
+						Text = "H: Hast du alle Zutaten für den Stärketrank zusammen?",
+						Options = new List<DialogOption>
+						{
+							new DialogOption
+							{
+								Text = "Nein",
+								Next = new Dialog
+								{
+									Text = "H: Dann komm gerne später wieder, wenn du alles beisammen hast. Ich räume hier noch weiter auf."
+								}
+							},
+							new DialogOption
+							{
+								Condition = () => Inventory.Instance.HasItems("Wasser", "Spinnenaugen", "Mitternachtspilz", "Blüten"),
+								Text = "Ja",
+								Next = new Dialog
+								{
+									Text = "H: Dann kann ich dir jetzt den Trank brauen.",
+									Next = new Dialog
+									{
+										Text = "H: Bitteschön.",
+										Script = () =>
+										{
+											Inventory.Instance.RemoveItems("Wasser", "Spinnenaugen", "Mitternachtspilz", "Blüten");
+											DialogTriggers.StrengthPotion = true;
+										}
+									}
+								}
+							},
 						}
 					}
 				},
@@ -104,6 +181,44 @@ public class Witch : BaseInteractable
 				},
 				new DialogOption
 				{
+					Condition = () => DialogTriggers.GrassSeen && DialogTriggers.HasListGrass && !DialogTriggers.DryPotion,
+					Text = "Stroh",
+					Next = new Dialog
+					{
+						Text = "H: Hast du alle Zutaten für den Trocknungstrank zusammen?",
+						Options = new List<DialogOption>
+						{
+							new DialogOption
+							{
+								Text = "Nein",
+								Next = new Dialog
+								{
+									Text = "H: Dann komm gerne später wieder, wenn du alles beisammen hast. Ich räume hier noch weiter auf."
+								}
+							},
+							new DialogOption
+							{
+								Condition = () => Inventory.Instance.HasItems("Wasser", "Zähne", "Kräuter", "Federn"),
+								Text = "Ja",
+								Next = new Dialog
+								{
+									Text = "H: Dann kann ich dir jetzt den Trank brauen.",
+									Next = new Dialog
+									{
+										Text = "H: Bitteschön.",
+										Script = () =>
+										{
+											Inventory.Instance.RemoveItems("Wasser", "Zähne", "Kräuter", "Federn");
+											DialogTriggers.DryPotion = true;
+										}
+									}
+								}
+							},
+						}
+					}
+				},
+				new DialogOption
+				{
 					Text = "Nein",
 					Next = new Dialog
 					{
@@ -112,7 +227,7 @@ public class Witch : BaseInteractable
 				},
 				new DialogOption
 				{
-					Condition = () => DialogTriggers.HasListTree && DialogTriggers.HasListRock && DialogTriggers.HasListGrass && Inventory.Instance.HasFinalItems(),
+					Condition = () => Inventory.Instance.HasFinalItems(),
 					Text = "Ja",
 					Next = new Dialog
 					{
