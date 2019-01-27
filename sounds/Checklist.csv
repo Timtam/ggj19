@@ -5,13 +5,13 @@ Donner;Loop gemixt;thunderstorm_loop
 Wind;Loop gemixt;thunderstorm_loop
 Regen;Loop gemixt;thunderstorm_loop
 Haus kaputt;Gemixt;home_destroyed
-Wasser / Fluss;;
+Wasser / Fluss;Streams quietstream.wav;river_loop
 Wasserfall;;
-Wald;;
-Vögel;;
+Wald;Simi_Valley_5.1.wav;forest_loop
+Vögel;Simi_Valley_5.1.wav;forest_loop
 ;;
 Laufen;Footsteps_Outdoor_Leaves_Boots_Walk_Medium_B.wav;footsteps_1 bis 10
-Springen;;
+Springen;Footsteps_Outdoor_Leaves_Boots_Scrape_Medium_Special_A.wav;jump_1 und 2
 Landen;Footsteps_Outdoor_Leaves_Boots_Land_Two Feet_Special_A.wav;landing_1 und 2
 Dialogauswahl geöffnet;ec-explainer_Designed_ComplexCombination_01.wav;dialog_open
 Dialogauswahl getroffen;ec-explainer_Designed_ComplexCombination_03.wav;dialog_choose
