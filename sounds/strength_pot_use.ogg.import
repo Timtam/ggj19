@@ -11,5 +11,5 @@ dest_files=[ "res://.import/strength_pot_use.ogg-5f10a40e47151519eb84f3103610e92
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

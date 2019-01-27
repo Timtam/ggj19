@@ -11,5 +11,5 @@ dest_files=[ "res://.import/growth_pot_use.ogg-7b6b76ede82cdef2e448a49ba8d90edc.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

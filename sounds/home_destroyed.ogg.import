@@ -11,5 +11,5 @@ dest_files=[ "res://.import/home_destroyed.ogg-8231bae59371459e43bb300d5c7c340b.
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/dry_pot_brew.ogg-f5e17cbcb3d985a459332ea14dacb504.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/strength_pot_brew.ogg-f6496423f669e649721a478da588c4
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

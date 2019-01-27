@@ -11,5 +11,5 @@ dest_files=[ "res://.import/interact.ogg-1ccf3fa6096b45e1600e448af6047169.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

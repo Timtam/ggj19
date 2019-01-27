@@ -11,5 +11,5 @@ dest_files=[ "res://.import/mop_attack_1.ogg-92d325b0493318653c92a2b27e8ba564.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

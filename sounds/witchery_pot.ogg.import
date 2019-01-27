@@ -11,5 +11,5 @@ dest_files=[ "res://.import/witchery_pot.ogg-8c5d10c80fa9663f31026d2558c2851e.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

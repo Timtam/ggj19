@@ -11,5 +11,5 @@ dest_files=[ "res://.import/mop_die.ogg-99f52af38afcbe4e8cf01d9c8a82d9e1.oggstr"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
