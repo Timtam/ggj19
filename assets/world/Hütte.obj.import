@@ -2,16 +2,16 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/Hütte.obj-18bdffb1a981cc8234ed4392ffc7a6e0.mesh"
+path="res://.import/Hütte.obj-2f119c3eda9dc78d55ab701127059291.mesh"
 
 [deps]
 
-files=[ "res://.import/Hütte.obj-18bdffb1a981cc8234ed4392ffc7a6e0.mesh" ]
+files=[ "res://.import/Hütte.obj-2f119c3eda9dc78d55ab701127059291.mesh" ]
 
-source_file="res://assets/world/obj/Hütte.obj"
-dest_files=[ "res://.import/Hütte.obj-18bdffb1a981cc8234ed4392ffc7a6e0.mesh", "res://.import/Hütte.obj-18bdffb1a981cc8234ed4392ffc7a6e0.mesh" ]
+source_file="res://assets/world/Hütte.obj"
+dest_files=[ "res://.import/Hütte.obj-2f119c3eda9dc78d55ab701127059291.mesh", "res://.import/Hütte.obj-2f119c3eda9dc78d55ab701127059291.mesh" ]
 
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 0.03, 0.03, 0.03 )
+scale_mesh=Vector3( 3, 3, 3 )
