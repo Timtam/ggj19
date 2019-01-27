@@ -16,12 +16,14 @@ public class Player : KinematicBody
 	MoveController controller;
 	IList<IInteractable> closeInteractions = new List<IInteractable>();
 	Area attackArea;
+	AudioStreamPlayer fxPlayer;
 
 	public override void _Ready()
 	{
 		target = (Spatial)GetNode("target");
 		camera = (PlayerCam)GetNode("target/camera");
 		attackArea = (Area)GetNode("attack_area");
+		fxPlayer = (AudioStreamPlayer)GetNode("fx_player");
 		Input.SetMouseMode(Godot.Input.MouseMode.Captured);
 		Health = 100;
 		controller = new MoveController(this);
@@ -37,6 +39,8 @@ public class Player : KinematicBody
 			}
 			var interaction = closeInteractions.OrderBy(i => (i as Spatial).GlobalTransform.origin.DistanceSquaredTo(this.GlobalTransform.origin)).First();
 			this.GetGameWorld().DialogSystem.DisplayDialog(interaction.GetInteractionDialog());
+			fxPlayer.Stream = ResourceLoader.Load("res://sounds/interact.ogg") as AudioStream;
+			fxPlayer.Play();
 		}
 	}
 

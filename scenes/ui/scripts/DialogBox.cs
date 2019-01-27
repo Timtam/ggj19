@@ -18,6 +18,7 @@ public class DialogBox : VBoxContainer
 	Button[] buttons;
 	TextureRect arrow;
 	AnimationPlayer arrowAnim;
+	AudioStreamPlayer player;
 
 	float visibleChars;
 	TextState state = TextState.None;
@@ -30,6 +31,7 @@ public class DialogBox : VBoxContainer
 		buttons = new[] { "a", "b", "c" }.Select(b => (Button)GetNode($"hbox/vbox/button_{b}")).ToArray();
 		arrow = (TextureRect)GetNode("text_panel/text/arrow");
 		arrowAnim = (AnimationPlayer)GetNode("text_panel/text/anim");
+		player = (AudioStreamPlayer)GetNode("audio");
 	}
 
 	public void DisplayDialog(Dialog dialog)
@@ -79,6 +81,8 @@ public class DialogBox : VBoxContainer
 					{
 						buttons[i].Visible = true;
 					}
+					player.Stream = ResourceLoader.Load("res://sounds/dialog_open.ogg") as AudioStream;
+					player.Play();
 				}
 			}
 		}
@@ -112,5 +116,7 @@ public class DialogBox : VBoxContainer
 	{
 		if (state != TextState.Waiting) return;
 		DisplayOrExit(currentOptions[index].Next);
+		player.Stream = ResourceLoader.Load("res://sounds/dialog_choose.ogg") as AudioStream;
+		player.Play();
 	}
 }

@@ -310,20 +310,29 @@ collision/safe_margin = 0.001
 script = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="body_collision" type="CollisionShape" parent="player" index="0"]
+[node name="fx_player" type="AudioStreamPlayer" parent="player" index="0"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="body_collision" type="CollisionShape" parent="player" index="1"]
 
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0.088052, 0 )
 shape = SubResource( 4 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="feet_collision" type="CollisionShape" parent="player" index="1"]
+[node name="feet_collision" type="CollisionShape" parent="player" index="2"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.516262, 0 )
 shape = SubResource( 5 )
 disabled = false
 
-[node name="MeshInstance" type="MeshInstance" parent="player" index="2"]
+[node name="MeshInstance" type="MeshInstance" parent="player" index="3"]
 
 transform = Transform( -0.1, 0, -3.25841e-08, 0, 0.1, 0, 3.25841e-08, 0, -0.1, 0, -0.800711, 0 )
 layers = 1
@@ -345,7 +354,7 @@ material/4 = null
 material/5 = null
 _sections_unfolded = [ "Transform" ]
 
-[node name="target" type="Spatial" parent="player" index="3"]
+[node name="target" type="Spatial" parent="player" index="4"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.606611, 0 )
 
@@ -367,7 +376,7 @@ far = 100.0
 script = ExtResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="attack_area" type="Area" parent="player" index="4"]
+[node name="attack_area" type="Area" parent="player" index="5"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.995383 )
 input_ray_pickable = false
@@ -434,7 +443,16 @@ alignment = 2
 script = ExtResource( 11 )
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_constants" ]
 
-[node name="hbox" type="HBoxContainer" parent="ui/dialog_box" index="0"]
+[node name="audio" type="AudioStreamPlayer" parent="ui/dialog_box" index="0"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="hbox" type="HBoxContainer" parent="ui/dialog_box" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -551,7 +569,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Theme" ]
 
-[node name="text_panel" type="PanelContainer" parent="ui/dialog_box" index="1"]
+[node name="text_panel" type="PanelContainer" parent="ui/dialog_box" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
