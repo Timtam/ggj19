@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/game/scripts/Mopp.cs" type="Script" id=1]
-[ext_resource path="res://assets/player/basicCharacter.tres" type="ArrayMesh" id=2]
+[ext_resource path="res://assets/mop/Mop.obj" type="ArrayMesh" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 
 radius = 0.455348
-height = 0.757423
+height = 0.438686
 
 [node name="mopp" type="KinematicBody"]
 
@@ -26,14 +26,14 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0.781644, 0 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0.556803, 0 )
 shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="1"]
 
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.190767, 0, -1.31066 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -49,8 +49,6 @@ material/0 = null
 material/1 = null
 material/2 = null
 material/3 = null
-material/4 = null
-material/5 = null
 _sections_unfolded = [ "Transform" ]
 
 
