@@ -24,11 +24,6 @@ public class Inventory : Panel
 			invGrid.AddChild(invSlots[i]);
 		}
 
-		foreach (var item in Items.all_items)
-		{
-			AddItem(item);
-		}
-
 		Instance = this;
 	}
 

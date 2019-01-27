@@ -65,6 +65,7 @@
     <Compile Include="scenes\game\scripts\Map.cs" />
     <Compile Include="scenes\game\scripts\MidnightShroom.cs" />
     <Compile Include="scenes\game\scripts\Mopp.cs" />
+    <Compile Include="scenes\game\scripts\MoppDrop.cs" />
     <Compile Include="scenes\game\scripts\Player.cs" />
     <Compile Include="scenes\game\scripts\PlayerCam.cs" />
     <Compile Include="scenes\Splash.cs" />

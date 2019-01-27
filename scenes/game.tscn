@@ -114,7 +114,9 @@ light_data = SubResource( 1 )
 
 [node name="mopp" type="Spatial" parent="." index="2"]
 
-[node name="mopp_0" type="KinematicBody" parent="mopp" index="0"]
+[node name="drop" type="Spatial" parent="mopp" index="0"]
+
+[node name="mopp_0" type="KinematicBody" parent="mopp" index="1"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.40778, 12.0643 )
 input_ray_pickable = true
