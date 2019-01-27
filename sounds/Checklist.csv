@@ -13,10 +13,10 @@ Vögel;;
 Laufen;;
 Springen;;
 Landen;;
-Dialogauswahl geöffnet;;
-Dialogauswahl getroffen;;
-Interagieren?;;
-Aufheben;;
+Dialogauswahl geöffnet;ec-explainer_Designed_ComplexCombination_01.wav;dialog_open
+Dialogauswahl getroffen;ec-explainer_Designed_ComplexCombination_03.wav;dialog_choose
+Interagieren?;Erstes von ec-explainer_Designed_whooshes_20.wav;interact
+Aufheben;Letztes Bag Foley_Shoulder bag_Leather and crocheted fabric_Grab.wav;collect
 ;;
 Zauberkessel;mehrere zusammengemixt (Reaper-Projekt);witchery_pot
 Wachstumstrank brauen;Cooking_Game_Power_Up_Water_01;growth_pot_brew
@@ -30,7 +30,7 @@ Angreifen;Magic_Sparkle_Ding_or_Hit_2;
 Getroffen werden;;
 Sterben;Cooking_Game_Alert_Penalty_03;
 ;;
-Mob getroffen werden;;
-Mob sterben;;
+Mob getroffen werden;FUN MONSTER Martian delirous consent short 01.wav bis 03.wav;mop_hit_1 bis 3
+Mob sterben;FUN MONSTER Martian delirous die.wav;mop_die
 Mob idle;;
-mob angreifen;;
+mob angreifen;FUN MONSTER Martian delirous attack 02.wav, 04, 05, 10;mop_attack_1 bis 4
