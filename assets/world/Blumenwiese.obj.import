@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Blumenwiese.obj-51ca0d2e60807bc9db889396b0d0e992.mesh"
+
+[deps]
+
+files=[ "res://.import/Blumenwiese.obj-51ca0d2e60807bc9db889396b0d0e992.mesh" ]
+
+source_file="res://assets/world/Blumenwiese.obj"
+dest_files=[ "res://.import/Blumenwiese.obj-51ca0d2e60807bc9db889396b0d0e992.mesh", "res://.import/Blumenwiese.obj-51ca0d2e60807bc9db889396b0d0e992.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
