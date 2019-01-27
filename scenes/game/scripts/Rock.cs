@@ -15,9 +15,15 @@ public class Rock : BaseInteractable
 			return new Dialog
 			{
 				Text = "L: Dieser Stein sieht gut aus, um damit die Wände zu verbessern. Mit dem Stärketrank kann ich mir jetzt Stücke mitnehmen.",
+				Sounds = new string[]
+				{
+					"res://sounds/strength_pot_use.ogg",
+					"res://sounds/collect.ogg",
+				},
 				Script = () =>
 				{
 					Inventory.Instance.AddItem(Items.GetItem("Steine"));
+					this.QueueFree();
 				}
 			};
 		}

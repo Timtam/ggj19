@@ -23,6 +23,10 @@ public class Tree : BaseInteractable
 			return new Dialog
 			{
 				Text = "L: Das ist der perfekte Baum zum Verbessern der Hauswände. Jetzt kann ich Holz mitnehmen.",
+				Sounds = new string[]
+				{
+					"res://sounds/collect.ogg",
+				},
 				Script = () =>
 				{
 					Inventory.Instance.AddItem(Items.GetItem("Holz"));
@@ -35,6 +39,10 @@ public class Tree : BaseInteractable
 			return new Dialog
 			{
 				Text = "L: Das ist der perfekte Baum zum Verbessern der Hauswände. Mit dem Wachstumstrank kann ich ihn jetzt wachsen lassen.",
+				Sounds = new string[]
+				{
+					"res://sounds/growth_pot_use.ogg",
+				},
 				Script = () =>
 				{
 					isBig = true;

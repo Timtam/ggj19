@@ -15,6 +15,11 @@ public class Grass : BaseInteractable
 			return new Dialog
 			{
 				Text = "L: Das Gras hier wäre perfekt, um damit unser Dach zu reparieren. Mit dem Trocknungstrank kann ich daraus jetzt Stroh machen.",
+				Sounds = new string[]
+				{
+					"res://sounds/dry_pot_use.ogg",
+					"res://sounds/collect.ogg",
+				},
 				Script = () =>
 				{
 					Inventory.Instance.AddItem(Items.GetItem("Stroh"));

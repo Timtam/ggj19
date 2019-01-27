@@ -22,6 +22,10 @@ public class Feather : BaseInteractable
 		return new Dialog
 		{
 			Text = text,
+			Sounds = new string[]
+			{
+				"res://sounds/collect.ogg",
+			},
 			Script = () =>
 			{
 				Inventory.Instance.AddItem(Items.GetItem("Federn"));
