@@ -17,6 +17,11 @@ public class Player : KinematicBody
 	IList<IInteractable> closeInteractions = new List<IInteractable>();
 	Area attackArea;
 	AudioStreamPlayer fxPlayer;
+	AudioStreamPlayer stepPlayer;
+
+	AudioStream[] stepSounds = new AudioStream[10];
+	AudioStream[] landingSounds = new AudioStream[2];
+	bool jumping = false;
 
 	public override void _Ready()
 	{
@@ -24,9 +29,19 @@ public class Player : KinematicBody
 		camera = (PlayerCam)GetNode("target/camera");
 		attackArea = (Area)GetNode("attack_area");
 		fxPlayer = (AudioStreamPlayer)GetNode("fx_player");
+		stepPlayer = (AudioStreamPlayer)GetNode("step_player");
 		Input.SetMouseMode(Godot.Input.MouseMode.Captured);
 		Health = 100;
 		controller = new MoveController(this);
+
+		for (int i = 0; i < stepSounds.Length; i++)
+		{
+			stepSounds[i] = ResourceLoader.Load($"res://sounds/footstep_{i + 1}.ogg") as AudioStream;
+		}
+		for (int i = 0; i < landingSounds.Length; i++)
+		{
+			landingSounds[i] = ResourceLoader.Load($"res://sounds/landing_{i + 1}.ogg") as AudioStream;
+		}
 	}
 
 	public override void _Process(float delta)
@@ -58,6 +73,24 @@ public class Player : KinematicBody
 		if (Input.IsActionPressed("movement_right"))
 			moveVec.x += 1;
 		bool sprinting = Input.IsActionPressed("movement_sprint");
+		if (moveVec.LengthSquared() > 0.1f)
+		{
+			if (!stepPlayer.Playing && IsOnFloor())
+			{
+				stepPlayer.Stream = stepSounds[new Random().Next(stepSounds.Length)];
+				stepPlayer.Play();
+			}
+		}
+		if (jumping && IsOnFloor())
+		{
+			stepPlayer.Stream = landingSounds[new Random().Next(landingSounds.Length)];
+			stepPlayer.Play();
+			jumping = false;
+		}
+		else if (!IsOnFloor())
+		{
+			jumping = true;
+		}
 
 		controller.PhysicsMove(delta, ref velocity, moveVec, moveBasis: this.GlobalTransform.basis, sprinting: Input.IsActionPressed("movement_sprint"), jump: Input.IsActionJustPressed("jump"));
 

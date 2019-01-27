@@ -319,20 +319,29 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="body_collision" type="CollisionShape" parent="player" index="1"]
+[node name="step_player" type="AudioStreamPlayer" parent="player" index="1"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="body_collision" type="CollisionShape" parent="player" index="2"]
 
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0.088052, 0 )
 shape = SubResource( 4 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="feet_collision" type="CollisionShape" parent="player" index="2"]
+[node name="feet_collision" type="CollisionShape" parent="player" index="3"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.516262, 0 )
 shape = SubResource( 5 )
 disabled = false
 
-[node name="MeshInstance" type="MeshInstance" parent="player" index="3"]
+[node name="MeshInstance" type="MeshInstance" parent="player" index="4"]
 
 transform = Transform( -0.1, 0, -3.25841e-08, 0, 0.1, 0, 3.25841e-08, 0, -0.1, 0, -0.800711, 0 )
 layers = 1
@@ -354,7 +363,7 @@ material/4 = null
 material/5 = null
 _sections_unfolded = [ "Transform" ]
 
-[node name="target" type="Spatial" parent="player" index="4"]
+[node name="target" type="Spatial" parent="player" index="5"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.606611, 0 )
 
@@ -376,7 +385,7 @@ far = 100.0
 script = ExtResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="attack_area" type="Area" parent="player" index="5"]
+[node name="attack_area" type="Area" parent="player" index="6"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.995383 )
 input_ray_pickable = false
