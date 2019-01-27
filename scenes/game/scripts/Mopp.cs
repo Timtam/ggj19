@@ -28,8 +28,19 @@ public class Mopp : KinematicBody
 		var moppDropScene = ResourceLoader.Load("res://scenes/game/mopp_drop.tscn") as PackedScene;
 		var moppDrop = moppDropScene.Instance() as MoppDrop;
 		moppDrop.SetTranslation(itemSpawn);
-		// TODO: Set mesh and item name in a useful way
 		moppDrop.ItemName = (new[] { "Flügel", "Zähne", "Spinnenaugen" })[new Random().Next(3)];
+		switch (moppDrop.ItemName)
+		{
+			case "Flügel":
+				moppDrop.MeshPath = "res://assets/world/obj/Flügel.obj";
+				break;
+			case "Zähne":
+				moppDrop.MeshPath = "res://assets/world/obj/Zahn.obj";
+				break;
+			case "Spinnenaugen":
+				moppDrop.MeshPath = "res://assets/world/obj/Auge.obj";
+				break;
+		}
 		GetNode("../drop").AddChild(moppDrop);
 	}
 }

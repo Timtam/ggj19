@@ -4,6 +4,7 @@ using System;
 public class MoppDrop : RigidBody
 {
 	public string ItemName;
+	public string MeshPath;
 
 	Area pickupArea;
 	MeshInstance meshInstance;
@@ -14,6 +15,7 @@ public class MoppDrop : RigidBody
 		meshInstance = (MeshInstance)GetNode("mesh");
 
 		pickupArea.Connect("body_entered", this, nameof(OnBodyEntered));
+		meshInstance.Mesh = ResourceLoader.Load(MeshPath) as Mesh;
 	}
 
 	public void OnBodyEntered(CollisionObject other)

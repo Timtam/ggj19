@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Auge.obj-397a61d4abfc47d67c760b475b3f6ca5.mesh"
+
+[deps]
+
+files=[ "res://.import/Auge.obj-397a61d4abfc47d67c760b475b3f6ca5.mesh" ]
+
+source_file="res://assets/world/obj/Auge.obj"
+dest_files=[ "res://.import/Auge.obj-397a61d4abfc47d67c760b475b3f6ca5.mesh", "res://.import/Auge.obj-397a61d4abfc47d67c760b475b3f6ca5.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.002, 0.002, 0.002 )

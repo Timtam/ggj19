@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Flügel.obj-e97669e1d13bdab5eb911f2569a21b4f.mesh"
+
+[deps]
+
+files=[ "res://.import/Flügel.obj-e97669e1d13bdab5eb911f2569a21b4f.mesh" ]
+
+source_file="res://assets/world/obj/Flügel.obj"
+dest_files=[ "res://.import/Flügel.obj-e97669e1d13bdab5eb911f2569a21b4f.mesh", "res://.import/Flügel.obj-e97669e1d13bdab5eb911f2569a21b4f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.002, 0.002, 0.002 )
