@@ -71,6 +71,7 @@
     <Compile Include="scenes\game\scripts\PlayerCam.cs" />
     <Compile Include="scenes\game\scripts\Rock.cs" />
     <Compile Include="scenes\game\scripts\Water.cs" />
+    <Compile Include="scenes\game\scripts\Witch.cs" />
     <Compile Include="scenes\Splash.cs" />
     <Compile Include="scenes\ui\scripts\DialogBox.cs" />
     <Compile Include="scenes\ui\scripts\Health.cs" />
