@@ -79,6 +79,7 @@
     <Compile Include="scenes\ui\scripts\Inventory.cs" />
     <Compile Include="scenes\ui\scripts\InvItem.cs" />
     <Compile Include="scenes\ui\scripts\InvSlot.cs" />
+    <Compile Include="scenes\ui\scripts\Pause.cs" />
     <Compile Include="scenes\ui\scripts\Tooltip.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
