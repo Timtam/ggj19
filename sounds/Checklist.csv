@@ -26,11 +26,11 @@ Wachstumstrank einsetzen;Cooking_Game_Power_Up_Dish_Grow_03;growth_pot_use
 Stärketrank einsetzen;Cooking_Game_Power_Up_Speed_01;strength_pot_use
 Trocknungstrank einsetzen;Cooking_Game_Ingredient_Actions_Sprinkle_01;dry_pot_use
 ;;
-Angreifen;Magic_Sparkle_Ding_or_Hit_2;
-Getroffen werden;;
-Sterben;Cooking_Game_Alert_Penalty_03;
+Angreifen;Magic_Sparkle_Ding_or_Hit_2 und Magic_Wobble_Game_Hit.wav;player_attack
+Getroffen werden;Attack_Enemy_Impact_4.wav;player_hit
+Sterben;Cooking_Game_Alert_Penalty_03;player_die
 ;;
-Mob getroffen werden;FUN MONSTER Martian delirous consent short 01.wav bis 03.wav;mop_hit_1 bis 3
+Mob getroffen werden;FUN MONSTER Martian delirous consent short 01.wav bis 03;mop_hit_1 bis 3
 Mob sterben;FUN MONSTER Martian delirous die.wav;mop_die
-Mob idle;;
+Mob idle;FUN MONSTER Martian delirous sleep snore 01.wav bis 05;mop_idle_1 bis 5
 mob angreifen;FUN MONSTER Martian delirous attack 02.wav, 04, 05, 10;mop_attack_1 bis 4
