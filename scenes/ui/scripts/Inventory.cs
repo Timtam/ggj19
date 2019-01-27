@@ -7,6 +7,7 @@ public class Inventory : Panel
 	GridContainer invGrid;
 	InvSlot[] invSlots;
 	bool isInInventory = false;
+	bool eventRegistered = false;
 
 	public Tooltip Tooltip;
 
@@ -31,6 +32,11 @@ public class Inventory : Panel
 	{
 		if (@event is InputEventKey key && key.IsActionPressed("inventory"))
 		{
+			if (!eventRegistered && UI.Instance != null)
+			{
+				UI.Instance.ActiveUIPartsChanged += OnActiveUIPartsChanged;
+				eventRegistered = true;
+			}
 			var tree = this.GetTree();
 			if (!isInInventory && tree.Paused)
 			{
@@ -101,5 +107,17 @@ public class Inventory : Panel
 			}
 		}
 		return has.All(b => b);
+	}
+
+	private void OnActiveUIPartsChanged()
+	{
+		if (UI.Instance.IsActive(UIPart.Dialog))
+		{
+			this.PauseMode = PauseModeEnum.Stop;
+		}
+		else
+		{
+			this.PauseMode = PauseModeEnum.Inherit;
+		}
 	}
 }

@@ -16,6 +16,8 @@ public class UI : Control
 	public static UI Instance;
 	UIPart activeParts = UIPart.None;
 
+	public event Action ActiveUIPartsChanged;
+
 	public override void _Ready()
 	{
 		Instance = this;
@@ -31,8 +33,6 @@ public class UI : Control
 		{
 			activeParts &= ~part;
 		}
-
-		GD.Print($"changed {part} to {active}, now active: {activeParts}");
 
 		if (activeParts == UIPart.None)
 		{
@@ -53,6 +53,8 @@ public class UI : Control
 		{
 			this.PauseMode = PauseModeEnum.Process;
 		}
+
+		ActiveUIPartsChanged?.Invoke();
 	}
 
 	public bool IsActive(UIPart part) => (activeParts & part) != 0;
