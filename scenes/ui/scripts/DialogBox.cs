@@ -10,6 +10,7 @@ public class DialogBox : VBoxContainer
 		None,
 		Displaying,
 		Waiting,
+		WaitingForSound,
 	}
 
 	const float TEXT_SPEED = 20.0f;
@@ -24,6 +25,7 @@ public class DialogBox : VBoxContainer
 	TextState state = TextState.None;
 	Dialog currentDialog;
 	IList<DialogOption> currentOptions;
+	int soundIndex = -1;
 
 	public override void _Ready()
 	{
@@ -37,7 +39,6 @@ public class DialogBox : VBoxContainer
 	public void DisplayDialog(Dialog dialog)
 	{
 		currentDialog = dialog;
-		currentDialog.Script?.Invoke();
 		currentOptions = dialog.Options.Where(o => o.Condition == null || o.Condition.Invoke()).ToList();
 		textBox.Text = currentDialog.Text;
 		textBox.VisibleCharacters = 0;
@@ -69,19 +70,29 @@ public class DialogBox : VBoxContainer
 			textBox.VisibleCharacters = Mathf.FloorToInt(visibleChars);
 			if (visibleChars >= textBox.Text.Length)
 			{
-				state = TextState.Waiting;
-				if (currentOptions.Count == 0)
+				if (currentDialog.Sounds.Length > 0)
 				{
-					arrow.Visible = true;
-					arrowAnim.Play("Bounce");
+					state = TextState.WaitingForSound;
+					soundIndex = -1;
 				}
 				else
 				{
-					for (int i = 0; i < currentOptions.Count && i < buttons.Length; i++)
-					{
-						buttons[i].Visible = true;
-					}
-					player.Stream = ResourceLoader.Load("res://sounds/dialog_open.ogg") as AudioStream;
+					TextFinished();
+				}
+			}
+		}
+		else if (state == TextState.WaitingForSound)
+		{
+			if (!player.IsPlaying())
+			{
+				soundIndex++;
+				if (currentDialog.Sounds.Length <= soundIndex)
+				{
+					TextFinished();
+				}
+				else
+				{
+					player.Stream = ResourceLoader.Load(currentDialog.Sounds[soundIndex]) as AudioStream;
 					player.Play();
 				}
 			}
@@ -94,6 +105,26 @@ public class DialogBox : VBoxContainer
 				arrowAnim.Stop();
 				DisplayOrExit(currentDialog.Next);
 			}
+		}
+
+		void TextFinished()
+		{
+			if (currentOptions.Count == 0)
+			{
+				arrow.Visible = true;
+				arrowAnim.Play("Bounce");
+			}
+			else
+			{
+				for (int i = 0; i < currentOptions.Count && i < buttons.Length; i++)
+				{
+					buttons[i].Visible = true;
+				}
+				player.Stream = ResourceLoader.Load("res://sounds/dialog_open.ogg") as AudioStream;
+				player.Play();
+			}
+			state = TextState.Waiting;
+			currentDialog.Script?.Invoke();
 		}
 	}
 

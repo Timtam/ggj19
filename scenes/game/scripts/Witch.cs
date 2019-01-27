@@ -91,6 +91,11 @@ public class Witch : BaseInteractable
 								Next = new Dialog
 								{
 									Text = "H: Dann kann ich dir jetzt den Trank brauen.",
+									Sounds = new []
+									{
+										"res://sounds/witchery_pot.ogg",
+										"res://sounds/growth_pot_brew.ogg",
+									},
 									Next = new Dialog
 									{
 										Text = "H: Bitteschön.",
@@ -147,6 +152,11 @@ public class Witch : BaseInteractable
 								Next = new Dialog
 								{
 									Text = "H: Dann kann ich dir jetzt den Trank brauen.",
+									Sounds = new []
+									{
+										"res://sounds/witchery_pot.ogg",
+										"res://sounds/strength_pot_brew.ogg",
+									},
 									Next = new Dialog
 									{
 										Text = "H: Bitteschön.",
@@ -203,6 +213,11 @@ public class Witch : BaseInteractable
 								Next = new Dialog
 								{
 									Text = "H: Dann kann ich dir jetzt den Trank brauen.",
+									Sounds = new []
+									{
+										"res://sounds/witchery_pot.ogg",
+										"res://sounds/dry_pot_brew.ogg",
+									},
 									Next = new Dialog
 									{
 										Text = "H: Bitteschön.",

@@ -7,6 +7,7 @@ public class Dialog
 	public IList<DialogOption> Options = new List<DialogOption>();
 	public Dialog Next;
 	public string Text = "";
+	public string[] Sounds = new string[0];
 
 	public delegate void ScriptHandler();
 	public ScriptHandler Script;
