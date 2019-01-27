@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/world/map/Map.obj" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game/scripts/Map.cs" type="Script" id=2]
@@ -7,10 +7,23 @@
 [ext_resource path="res://scenes/game/crystal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/game/feather.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/game/flower.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/game/herbs.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/game/midnight_shroom.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/game/scripts/Water.cs" type="Script" id=10]
-[ext_resource path="res://scenes/ui/interaction_billboard.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/game/scripts/Grass.cs" type="Script" id=8]
+[ext_resource path="res://assets/world/plant_bush.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://assets/world/plant_bushDetailed.obj" type="ArrayMesh" id=10]
+[ext_resource path="res://assets/world/plant_bushLarge.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://scenes/ui/interaction_billboard.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/game/herbs.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/game/scripts/Rock.cs" type="Script" id=14]
+[ext_resource path="res://scenes/game/midnight_shroom.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/game/scripts/Water.cs" type="Script" id=16]
+
+[sub_resource type="BoxShape" id=4]
+
+extents = Vector3( 4.69225, 1.59062, 4.05895 )
+
+[sub_resource type="BoxShape" id=3]
+
+extents = Vector3( 4.58821, 9.3213, 4.33106 )
 
 [sub_resource type="BoxShape" id=1]
 
@@ -167,60 +180,323 @@ transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -214.004, 12.4938, 513.971 )
 
-[node name="herbs" type="Spatial" parent="obj/interactions" index="4"]
+[node name="grass" type="Spatial" parent="obj/interactions" index="4"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.2942, 2.71625, 211.003 )
+script = ExtResource( 8 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="meshes" type="Spatial" parent="obj/interactions/grass" index="0"]
+
+editor/display_folded = true
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="obj/interactions/grass/meshes" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.351692, -0.212211, 0.00730896 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 9 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance2" type="MeshInstance" parent="obj/interactions/grass/meshes" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.694527, -0.218752, -0.646515 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 10 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance3" type="MeshInstance" parent="obj/interactions/grass/meshes" index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0889664, -0.217501, -0.428787 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 10 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="obj/interactions/grass/meshes" index="3"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.199013, -0.218751, 0.314667 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 11 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="obj/interactions/grass/meshes" index="4"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.709038, -0.218751, 0.45282 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 9 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="obj/interactions/grass/meshes" index="5"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.339752, -0.218751, 1.04453 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 9 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="obj/interactions/grass/meshes" index="6"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.304451, -0.218751, 0.895813 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 10 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="obj/interactions/grass/meshes" index="7"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.830299, -0.217501, -0.0453186 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 11 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="obj/interactions/grass/meshes" index="8"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01872, -0.218752, 0.526993 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 9 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="MeshInstance10" type="MeshInstance" parent="obj/interactions/grass/meshes" index="9"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56065, -0.217501, -0.0799408 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 10 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="MeshInstance11" type="MeshInstance" parent="obj/interactions/grass/meshes" index="10"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.967674, -0.217501, -0.759033 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 10 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="Area" type="Area" parent="obj/interactions/grass" index="1"]
+
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="obj/interactions/grass/Area" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.438042, 0, 0 )
+shape = SubResource( 4 )
+disabled = false
+
+[node name="billboard" parent="obj/interactions/grass" index="2" instance=ExtResource( 12 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5613, 0 )
+
+[node name="herbs" type="Spatial" parent="obj/interactions" index="5"]
 
 editor/display_folded = true
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
 
-[node name="herbs" parent="obj/interactions/herbs" index="0" instance=ExtResource( 8 )]
+[node name="herbs" parent="obj/interactions/herbs" index="0" instance=ExtResource( 13 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -199.656, 12.4937, 505.254 )
 
-[node name="shrooms" type="Spatial" parent="obj/interactions" index="5"]
+[node name="rock" type="Spatial" parent="obj/interactions" index="6"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -234.586, 12.1581, 177.379 )
+script = ExtResource( 14 )
+
+[node name="Area" type="Area" parent="obj/interactions/rock" index="0"]
+
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="obj/interactions/rock/Area" index="0"]
+
+shape = SubResource( 3 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="billboard" parent="obj/interactions/rock" index="1" instance=ExtResource( 12 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.26768, 0 )
+
+[node name="shrooms" type="Spatial" parent="obj/interactions" index="7"]
 
 editor/display_folded = true
 
-[node name="midnight_shroom" parent="obj/interactions/shrooms" index="0" instance=ExtResource( 9 )]
+[node name="midnight_shroom" parent="obj/interactions/shrooms" index="0" instance=ExtResource( 15 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.2728, 2.52856, 97.0986 )
 
-[node name="midnight_shroom2" parent="obj/interactions/shrooms" index="1" instance=ExtResource( 9 )]
+[node name="midnight_shroom2" parent="obj/interactions/shrooms" index="1" instance=ExtResource( 15 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1654, 2.50471, 65.7346 )
 
-[node name="midnight_shroom3" parent="obj/interactions/shrooms" index="2" instance=ExtResource( 9 )]
+[node name="midnight_shroom3" parent="obj/interactions/shrooms" index="2" instance=ExtResource( 15 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6119, 2.50471, 65.2315 )
 
-[node name="midnight_shroom4" parent="obj/interactions/shrooms" index="3" instance=ExtResource( 9 )]
+[node name="midnight_shroom4" parent="obj/interactions/shrooms" index="3" instance=ExtResource( 15 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0243, 2.50471, 90.4577 )
 
-[node name="midnight_shroom5" parent="obj/interactions/shrooms" index="4" instance=ExtResource( 9 )]
+[node name="midnight_shroom5" parent="obj/interactions/shrooms" index="4" instance=ExtResource( 15 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9939, 2.50471, 89.8253 )
 
-[node name="midnight_shroom6" parent="obj/interactions/shrooms" index="5" instance=ExtResource( 9 )]
+[node name="midnight_shroom6" parent="obj/interactions/shrooms" index="5" instance=ExtResource( 15 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.5949, 2.50471, 96.2155 )
 
-[node name="midnight_shroom7" parent="obj/interactions/shrooms" index="6" instance=ExtResource( 9 )]
+[node name="midnight_shroom7" parent="obj/interactions/shrooms" index="6" instance=ExtResource( 15 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -125.11, 2.50471, 138.21 )
 
-[node name="midnight_shroom8" parent="obj/interactions/shrooms" index="7" instance=ExtResource( 9 )]
+[node name="midnight_shroom8" parent="obj/interactions/shrooms" index="7" instance=ExtResource( 15 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -125.704, 2.50471, 138.614 )
 
-[node name="water" type="Spatial" parent="obj/interactions" index="6"]
+[node name="water" type="Spatial" parent="obj/interactions" index="8"]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0414, 0, 49.8785 )
-script = ExtResource( 10 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area" type="Area" parent="obj/interactions/water" index="0"]
 
+editor/display_folded = true
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -252,6 +528,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Area2" type="Area" parent="obj/interactions/water" index="1"]
 
+editor/display_folded = true
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -280,7 +557,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9312, 0, -3.08167 )
 shape = SubResource( 2 )
 disabled = true
 
-[node name="billboard" parent="obj/interactions/water" index="2" instance=ExtResource( 11 )]
+[node name="billboard" parent="obj/interactions/water" index="2" instance=ExtResource( 12 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.76051, -3.35679 )
 

@@ -27,6 +27,9 @@ public static class DialogTriggers
 	public static bool HasListTree = false;
 	public static bool HasListRock = false;
 	public static bool HasListGrass = false;
+	public static bool GrowthPotion = false;
+	public static bool StrengthPotion = false;
+	public static bool DryPotion = false;
 }
 
 public static class Dialogs
@@ -64,18 +67,6 @@ public static class Dialogs
 	{
 		Text = "L: Das ist der perfekte Baum zum Verbessern der Hauswände. Leider ist er noch viel zu klein. Ich werde mal die Hexe fragen, ob sie mir dabei helfen kann.",
 		Script = () => { DialogTriggers.SmallTreeSeen = true; }
-	};
-
-	public static Dialog BigRock = new Dialog
-	{
-		Text = "L: Dieser Stein sieht gut aus, um damit die Wände zu verbessern. Leider bin ich nicht stark genug, um ihn in tragbare Stücke zu zerteilen. Vielleicht kann mir die Hexe dabei ja helfen.",
-		Script = () => { DialogTriggers.BigRockSeen = true; }
-	};
-
-	public static Dialog Grass = new Dialog
-	{
-		Text = "L: Das Gras hier wäre perfekt, um damit unser Dach zu reparieren. Allerdings müsste es dafür noch getrocknet werden. Die Hexe hat bestimmt ein Trankrezept, um mir dabei zu helfen.",
-		Script = () => { DialogTriggers.GrassSeen = true; }
 	};
 
 	public static Dialog Witch = new Dialog
