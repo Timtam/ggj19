@@ -61,7 +61,7 @@ public class InvItem : TextureRect
 						this.GetGameWorld().DialogSystem.DisplayDialog(new Dialog { Text = "Für den Wachstumstrank benötigt man:\n- Wasser\n- Mop-Flügel\n- Einige Beeren\n- Einen Kristall" });
 						break;
 					case "Zutatenliste (Stärketrank)":
-						this.GetGameWorld().DialogSystem.DisplayDialog(new Dialog { Text = "Für den Stärketrank benötigt man:\n- Wasser\n- Mop-Augen\n- Einen Mitternachtspilz\n- Eine Blüte" });
+						this.GetGameWorld().DialogSystem.DisplayDialog(new Dialog { Text = "Für den Stärketrank benötigt man:\n- Wasser\n- Spinnen-Augen\n- Einen Mitternachtspilz\n- Eine Blüte" });
 						break;
 					case "Zutatenliste (Trocknungstrank)":
 						this.GetGameWorld().DialogSystem.DisplayDialog(new Dialog { Text = "Für den Trocknungstrank benötigt man:\n- Wasser\n- Mop-Zähne\n- Einige Kräuter\n- Einige Federn" });
