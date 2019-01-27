@@ -10,9 +10,9 @@ Wasserfall;;
 Wald;;
 Vögel;;
 ;;
-Laufen;;
+Laufen;Footsteps_Outdoor_Leaves_Boots_Walk_Medium_B.wav;footsteps_1 bis 10
 Springen;;
-Landen;;
+Landen;Footsteps_Outdoor_Leaves_Boots_Land_Two Feet_Special_A.wav;landing_1 und 2
 Dialogauswahl geöffnet;ec-explainer_Designed_ComplexCombination_01.wav;dialog_open
 Dialogauswahl getroffen;ec-explainer_Designed_ComplexCombination_03.wav;dialog_choose
 Interagieren?;Erstes von ec-explainer_Designed_whooshes_20.wav;interact
