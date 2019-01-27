@@ -17,6 +17,7 @@ public abstract class BaseInteractable : Spatial, IInteractable
 			area.Connect("body_exited", this, nameof(OnBodyExited));
 		}
 		billboard = GetNode("billboard") as Sprite3D;
+		billboard.Visible = false;
 	}
 
 	public void OnBodyEntered(CollisionObject other)
