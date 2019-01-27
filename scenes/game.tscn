@@ -1,38 +1,48 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/game/scripts/GameWorld.cs" type="Script" id=1]
 [ext_resource path="res://scenes/map.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/game/scripts/Player.cs" type="Script" id=3]
+[ext_resource path="res://scenes/game/scripts/Mopp.cs" type="Script" id=3]
 [ext_resource path="res://assets/player/basicCharacter.tres" type="ArrayMesh" id=4]
-[ext_resource path="res://scenes/game/scripts/PlayerCam.cs" type="Script" id=5]
-[ext_resource path="res://scenes/ui/scripts/DialogBox.cs" type="Script" id=6]
-[ext_resource path="res://assets/ui/default_theme.tres" type="Theme" id=7]
-[ext_resource path="res://assets/ui/down.png" type="Texture" id=8]
-[ext_resource path="res://scenes/ui/scripts/Inventory.cs" type="Script" id=9]
-[ext_resource path="res://scenes/ui/scripts/Tooltip.cs" type="Script" id=10]
-[ext_resource path="res://assets/ui/barHorizontal_shadow.png" type="Texture" id=11]
-[ext_resource path="res://assets/ui/barHorizontal_green.png" type="Texture" id=12]
-[ext_resource path="res://scenes/ui/scripts/Health.cs" type="Script" id=13]
+[ext_resource path="res://scenes/game/scripts/Player.cs" type="Script" id=5]
+[ext_resource path="res://scenes/game/scripts/PlayerCam.cs" type="Script" id=6]
+[ext_resource path="res://scenes/ui/scripts/DialogBox.cs" type="Script" id=7]
+[ext_resource path="res://assets/ui/default_theme.tres" type="Theme" id=8]
+[ext_resource path="res://assets/ui/down.png" type="Texture" id=9]
+[ext_resource path="res://scenes/ui/scripts/Inventory.cs" type="Script" id=10]
+[ext_resource path="res://scenes/ui/scripts/Tooltip.cs" type="Script" id=11]
+[ext_resource path="res://assets/ui/barHorizontal_shadow.png" type="Texture" id=12]
+[ext_resource path="res://assets/ui/barHorizontal_green.png" type="Texture" id=13]
+[ext_resource path="res://scenes/ui/scripts/Health.cs" type="Script" id=14]
 
 [sub_resource type="BakedLightmapData" id=1]
 
 bounds = AABB( -218.742, -29.1042, -188.98, 437.484, 58.2084, 377.96 )
-cell_space_transform = Transform( 4.68132, 0, 0, 0, 4.68132, 0, 0, 0, 4.68132, 1024, 136.246, 884.676 )
+cell_space_transform = Transform( 4.68131, 0, 0, 0, 4.68131, 0, 0, 0, 4.68131, 1024, 136.246, 884.675 )
 cell_subdiv = 12
 energy = 1.0
 octree = PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 )
 user_data = [  ]
 
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape" id=5]
+
+radius = 0.455348
+height = 0.757423
+
+[sub_resource type="CapsuleShape" id=2]
 
 radius = 0.456986
 height = 0.805053
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=3]
 
 extents = Vector3( 0.507887, 0.0441019, 0.535573 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="BoxShape" id=6]
+
+extents = Vector3( 0.7, 0.7, 0.7 )
+
+[sub_resource type="Animation" id=4]
 
 length = 1.0
 loop = true
@@ -102,7 +112,55 @@ light_data = SubResource( 1 )
 
 [node name="map" parent="." index="1" instance=ExtResource( 2 )]
 
-[node name="player" type="KinematicBody" parent="." index="2"]
+[node name="mopp" type="Spatial" parent="." index="2"]
+
+[node name="mopp_0" type="KinematicBody" parent="mopp" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.40778, 12.0643 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="mopp/mopp_0" index="0"]
+
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0.781644, 0 )
+shape = SubResource( 5 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="MeshInstance" type="MeshInstance" parent="mopp/mopp_0" index="1"]
+
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 4 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="player" type="KinematicBody" parent="." index="3"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.64192, 0 )
 input_ray_pickable = true
@@ -116,19 +174,19 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
-script = ExtResource( 3 )
+script = ExtResource( 5 )
 
 [node name="body_collision" type="CollisionShape" parent="player" index="0"]
 
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0.088052, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="feet_collision" type="CollisionShape" parent="player" index="1"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.516262, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 disabled = false
 
 [node name="MeshInstance" type="MeshInstance" parent="player" index="2"]
@@ -172,10 +230,39 @@ fov = 70.0
 size = 1.0
 near = 0.05
 far = 100.0
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ui" type="Control" parent="." index="3"]
+[node name="attack_area" type="Area" parent="player" index="4"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.995383 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="player/attack_area" index="0"]
+
+shape = SubResource( 6 )
+disabled = false
+
+[node name="ui" type="Control" parent="." index="4"]
 
 pause_mode = 2
 anchor_left = 0.0
@@ -209,7 +296,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/separation = 20
 alignment = 2
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_constants" ]
 
 [node name="hbox" type="HBoxContainer" parent="ui/dialog_box" index="0"]
@@ -267,7 +354,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 7 )
+theme = ExtResource( 8 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -293,7 +380,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 7 )
+theme = ExtResource( 8 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -319,7 +406,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 7 )
+theme = ExtResource( 8 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -344,7 +431,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 7 )
+theme = ExtResource( 8 )
 _sections_unfolded = [ "Theme" ]
 
 [node name="text" type="RichTextLabel" parent="ui/dialog_box/text_panel" index="0"]
@@ -366,7 +453,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 7 )
+theme = ExtResource( 8 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -396,7 +483,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Hint", "Margin", "Mouse", "Rect" ]
 
@@ -407,7 +494,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Bounce = SubResource( 5 )
+anims/Bounce = SubResource( 4 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -429,7 +516,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Margin", "Mouse", "Pause", "Rect" ]
 
 [node name="inv_grid" type="GridContainer" parent="ui/inventory" index="0"]
@@ -448,7 +535,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 7 )
+theme = ExtResource( 8 )
 columns = 5
 _sections_unfolded = [ "Margin", "Rect", "Theme" ]
 
@@ -475,7 +562,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Mouse" ]
 
 [node name="tooltip" type="Label" parent="ui/inventory/tooltip_layer/tooltip_panel" index="0"]
@@ -494,7 +581,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 7 )
+theme = ExtResource( 8 )
 text = "Das ist ein Test."
 percent_visible = 1.0
 lines_skipped = 0
@@ -579,9 +666,9 @@ page = 0.0
 value = 50.0
 exp_edit = false
 rounded = false
-texture_under = ExtResource( 11 )
+texture_under = ExtResource( 12 )
 texture_over = null
-texture_progress = ExtResource( 12 )
+texture_progress = ExtResource( 13 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = true
@@ -589,7 +676,7 @@ stretch_margin_left = 6
 stretch_margin_top = 4
 stretch_margin_right = 6
 stretch_margin_bottom = 4
-script = ExtResource( 13 )
+script = ExtResource( 14 )
 _sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
 [connection signal="tree_exiting" from="." to="." method="OnTreeExiting"]

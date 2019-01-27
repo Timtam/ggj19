@@ -5,28 +5,26 @@ using System.Linq;
 
 public class Player : KinematicBody
 {
-	const float GRAVITY = -9.8f;
-	const float MOVE_SPEED = 6.0f;
-	const float SPRINT_SPEED = 10.0f;
 	const float MOUSE_SENSITIVITY = 0.0009f;
-	const float JUMP_SPEED = 7.0f;
-	const float ACCELERATION = 4.0f;
-	const float ACCELERATION_WALL = 1.0f;
-	const float DECELERATION = 16.0f;
+	const float ATTACK_DAMAGE = 35.0f;
 
 	public float Health;
 
 	Spatial target;
 	Camera camera;
 	Vector3 velocity = Vector3.Zero;
+	MoveController controller;
 	IList<IInteractable> closeInteractions = new List<IInteractable>();
+	Area attackArea;
 
 	public override void _Ready()
 	{
 		target = (Spatial)GetNode("target");
 		camera = (PlayerCam)GetNode("target/camera");
+		attackArea = (Area)GetNode("attack_area");
 		Input.SetMouseMode(Godot.Input.MouseMode.Captured);
 		Health = 100;
+		controller = new MoveController(this);
 	}
 
 	public override void _Process(float delta)
@@ -46,8 +44,6 @@ public class Player : KinematicBody
 	{
 		Vector3 moveVel = Vector3.Zero;
 
-		var basis = this.GlobalTransform.basis;
-		float speed = Input.IsActionPressed("movement_sprint") ? SPRINT_SPEED : MOVE_SPEED;
 		var moveVec = new Vector2();
 		if (Input.IsActionPressed("movement_forward"))
 			moveVec.y -= 1;
@@ -57,24 +53,28 @@ public class Player : KinematicBody
 			moveVec.x -= 1;
 		if (Input.IsActionPressed("movement_right"))
 			moveVec.x += 1;
-		moveVel += basis.x.Normalized() * moveVec.x;
-		moveVel += basis.z.Normalized() * moveVec.y;
-		moveVel.y = 0;
-		moveVel = moveVel.Normalized() * speed;
+		bool sprinting = Input.IsActionPressed("movement_sprint");
 
-		var hVelocity = velocity;
-		hVelocity.y = 0;
-		var accel = (moveVel.Dot(hVelocity) > 0) ? (IsOnWall() ? ACCELERATION_WALL : ACCELERATION) : DECELERATION;
-		hVelocity = hVelocity.LinearInterpolate(moveVel, accel * delta);
+		controller.PhysicsMove(delta, ref velocity, moveVec, moveBasis: this.GlobalTransform.basis, sprinting: Input.IsActionPressed("movement_sprint"), jump: Input.IsActionJustPressed("jump"));
 
+		if (Input.IsActionJustPressed("attack"))
+		{
+			var mopp = attackArea.GetOverlappingBodies().Select(b => b as Mopp).Where(b => b != null).FirstOrDefault();
+			if (mopp != null)
+			{
+				mopp.Health -= ATTACK_DAMAGE;
+				var dist = mopp.GlobalTransform.origin - this.GlobalTransform.origin;
+				dist = dist.Normalized();
+				dist.y += 1;
+				dist = dist.Normalized();
+				mopp.Velocity += dist * 7.0f;
 
-		if (this.IsOnFloor() && Input.IsActionJustPressed("jump"))
-			velocity.y = JUMP_SPEED;
-
-		velocity.y += GRAVITY * delta;
-		velocity.x = hVelocity.x;
-		velocity.z = hVelocity.z;
-		velocity = MoveAndSlide(velocity, Vector3.Up, 0.05f, 4, Mathf.Deg2Rad(20));
+				if (mopp.Health <= 0)
+				{
+					mopp.Die();
+				}
+			}
+		}
 	}
 
 	public override void _Input(InputEvent @event)
