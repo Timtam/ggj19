@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mop_idle_4.ogg-aa0abd8dd62c7868ac2b603f62d97295.oggstr"
+
+[deps]
+
+source_file="res://sounds/mop_idle_4.ogg"
+dest_files=[ "res://.import/mop_idle_4.ogg-aa0abd8dd62c7868ac2b603f62d97295.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
