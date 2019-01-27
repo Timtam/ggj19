@@ -38,17 +38,15 @@ public class Inventory : Panel
 			}
 			else if (!isInInventory)
 			{
-				tree.Paused = true;
 				this.Visible = true;
 				this.isInInventory = true;
-				Input.SetMouseMode(Input.MouseMode.Visible);
+				UI.Instance.SetActive(UIPart.Inventory, true);
 			}
 			else
 			{
-				tree.Paused = false;
 				this.Visible = false;
 				this.isInInventory = false;
-				Input.SetMouseMode(Input.MouseMode.Captured);
+				UI.Instance.SetActive(UIPart.Inventory, false);
 				Tooltip.Visible = false;
 			}
 		}

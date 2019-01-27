@@ -12,15 +12,7 @@ public class Pause : HBoxContainer
 		if (Input.IsActionJustPressed("pause"))
 		{
 			this.Visible = !this.Visible;
-			this.GetTree().Paused = this.Visible;
-			if (this.Visible)
-			{
-				Input.SetMouseMode(Input.MouseMode.Visible);
-			}
-			else
-			{
-				Input.SetMouseMode(Input.MouseMode.Captured);
-			}
+			UI.Instance.SetActive(UIPart.Pause, this.Visible);
 		}
 	}
 
@@ -32,7 +24,6 @@ public class Pause : HBoxContainer
 	public void OnContinueButtonPressed()
 	{
 		this.Visible = false;
-		this.GetTree().Paused = false;
-		Input.SetMouseMode(Input.MouseMode.Captured);
+		UI.Instance.SetActive(UIPart.Pause, false);
 	}
 }

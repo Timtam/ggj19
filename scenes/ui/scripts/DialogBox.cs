@@ -48,11 +48,10 @@ public class DialogBox : VBoxContainer
 			buttons[i].Visible = false;
 		}
 		this.Visible = true;
-		Input.SetMouseMode(Input.MouseMode.Visible);
-		this.GetTree().Paused = true;
 		state = TextState.Displaying;
 		visibleChars = 0;
 		arrow.Visible = false;
+		UI.Instance.SetActive(UIPart.Dialog, true);
 	}
 
 	public override void _Process(float delta)
@@ -103,10 +102,9 @@ public class DialogBox : VBoxContainer
 		else
 		{
 			this.Visible = false;
-			GetTree().Paused = false;
 			state = TextState.None;
-			Input.SetMouseMode(Input.MouseMode.Captured);
 			currentDialog = null;
+			UI.Instance.SetActive(UIPart.Dialog, false);
 		}
 	}
 
