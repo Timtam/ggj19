@@ -5,10 +5,10 @@
 
 [sub_resource type="CapsuleShape" id=1]
 
-radius = 0.455348
+radius = 0.366693
 height = 0.438686
 
-[node name="mopp" type="KinematicBody" index="0"]
+[node name="mopp" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -26,14 +26,14 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0.556803, 0 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0.568189, 0 )
 shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="1"]
 
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.190767, 0, -1.31066 )
+transform = Transform( -1.62921e-08, 0, 0.1, 0, 0.1, 0, -0.1, 0, -1.62921e-08, -1.29599, -0.212006, 0.20596 )
 layers = 1
 material_override = null
 cast_shadow = 1

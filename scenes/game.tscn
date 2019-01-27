@@ -1,19 +1,20 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/game/scripts/GameWorld.cs" type="Script" id=1]
 [ext_resource path="res://scenes/map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game/mopp.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/game/scripts/Player.cs" type="Script" id=4]
-[ext_resource path="res://assets/player/basicCharacter.tres" type="ArrayMesh" id=5]
-[ext_resource path="res://scenes/game/scripts/PlayerCam.cs" type="Script" id=6]
-[ext_resource path="res://scenes/ui/scripts/DialogBox.cs" type="Script" id=7]
-[ext_resource path="res://assets/ui/default_theme.tres" type="Theme" id=8]
-[ext_resource path="res://assets/ui/down.png" type="Texture" id=9]
-[ext_resource path="res://scenes/ui/scripts/Inventory.cs" type="Script" id=10]
-[ext_resource path="res://scenes/ui/scripts/Tooltip.cs" type="Script" id=11]
-[ext_resource path="res://assets/ui/barHorizontal_shadow.png" type="Texture" id=12]
-[ext_resource path="res://assets/ui/barHorizontal_green.png" type="Texture" id=13]
-[ext_resource path="res://scenes/ui/scripts/Health.cs" type="Script" id=14]
+[ext_resource path="res://scenes/game/scripts/Mopp.cs" type="Script" id=4]
+[ext_resource path="res://scenes/game/scripts/Player.cs" type="Script" id=5]
+[ext_resource path="res://assets/player/basicCharacter.tres" type="ArrayMesh" id=6]
+[ext_resource path="res://scenes/game/scripts/PlayerCam.cs" type="Script" id=7]
+[ext_resource path="res://scenes/ui/scripts/DialogBox.cs" type="Script" id=8]
+[ext_resource path="res://assets/ui/default_theme.tres" type="Theme" id=9]
+[ext_resource path="res://assets/ui/down.png" type="Texture" id=10]
+[ext_resource path="res://scenes/ui/scripts/Inventory.cs" type="Script" id=11]
+[ext_resource path="res://scenes/ui/scripts/Tooltip.cs" type="Script" id=12]
+[ext_resource path="res://assets/ui/barHorizontal_shadow.png" type="Texture" id=13]
+[ext_resource path="res://assets/ui/barHorizontal_green.png" type="Texture" id=14]
+[ext_resource path="res://scenes/ui/scripts/Health.cs" type="Script" id=15]
 
 [sub_resource type="BakedLightmapData" id=1]
 
@@ -115,9 +116,9 @@ light_data = SubResource( 1 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 12 )
 
-[node name="player" type="KinematicBody" parent="." index="3"]
+[node name="mopp" type="KinematicBody" parent="mopp" index="2" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.64192, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83587, 3.78438, 14.8504 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -130,6 +131,381 @@ axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
 script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp2" type="KinematicBody" parent="mopp" index="3" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.6765, 2.49875, 54.578 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp3" type="KinematicBody" parent="mopp" index="4" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.7344, 4.01438, 78.8968 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp4" type="KinematicBody" parent="mopp" index="5" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41565, 2.49875, 115.189 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp5" type="KinematicBody" parent="mopp" index="6" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2674, 2.49875, 126.758 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp6" type="KinematicBody" parent="mopp" index="7" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3596, 2.49875, 162.041 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp7" type="KinematicBody" parent="mopp" index="8" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -69.9773, 2.49875, 162.435 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp8" type="KinematicBody" parent="mopp" index="9" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.9095, 2.49875, 146.017 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp9" type="KinematicBody" parent="mopp" index="10" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -124.916, 3.76494, 166.25 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp10" type="KinematicBody" parent="mopp" index="11" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -154.767, 2.49875, 188.071 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp11" type="KinematicBody" parent="mopp" index="12" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -224.009, 11.53, 186.195 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp12" type="KinematicBody" parent="mopp" index="13" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -253.168, 2.49875, 98.9507 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp13" type="KinematicBody" parent="mopp" index="14" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -217.262, 2.62044, 64.8169 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp14" type="KinematicBody" parent="mopp" index="15" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -194.481, 2.70146, 47.482 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp15" type="KinematicBody" parent="mopp" index="16" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -156.011, 2.55084, 37.303 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp16" type="KinematicBody" parent="mopp" index="17" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -164.117, 2.49875, 99.327 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp17" type="KinematicBody" parent="mopp" index="18" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -155.888, 2.49875, 123.364 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp18" type="KinematicBody" parent="mopp" index="19" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -233.384, 2.49875, 74.7033 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp19" type="KinematicBody" parent="mopp" index="20" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -278.944, 2.49875, 48.3634 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp20" type="KinematicBody" parent="mopp" index="21" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -303.13, 2.49875, 19.3375 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp21" type="KinematicBody" parent="mopp" index="22" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -288.14, 2.49875, -15.9163 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="mopp22" type="KinematicBody" parent="mopp" index="23" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -237.473, 2.49875, -56.3505 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="player" type="KinematicBody" parent="." index="3"]
+
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 3.64192, 0 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+script = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="body_collision" type="CollisionShape" parent="player" index="0"]
 
@@ -156,7 +532,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 5 )
+mesh = ExtResource( 6 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -185,7 +561,7 @@ fov = 70.0
 size = 1.0
 near = 0.05
 far = 100.0
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="attack_area" type="Area" parent="player" index="4"]
@@ -251,7 +627,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/separation = 20
 alignment = 2
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_constants" ]
 
 [node name="hbox" type="HBoxContainer" parent="ui/dialog_box" index="0"]
@@ -309,7 +685,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 8 )
+theme = ExtResource( 9 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -335,7 +711,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 8 )
+theme = ExtResource( 9 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -361,7 +737,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 8 )
+theme = ExtResource( 9 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -386,7 +762,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 8 )
+theme = ExtResource( 9 )
 _sections_unfolded = [ "Theme" ]
 
 [node name="text" type="RichTextLabel" parent="ui/dialog_box/text_panel" index="0"]
@@ -408,7 +784,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 8 )
+theme = ExtResource( 9 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -438,7 +814,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Hint", "Margin", "Mouse", "Rect" ]
 
@@ -471,7 +847,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Margin", "Mouse", "Pause", "Rect" ]
 
 [node name="inv_grid" type="GridContainer" parent="ui/inventory" index="0"]
@@ -490,7 +866,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 8 )
+theme = ExtResource( 9 )
 columns = 5
 _sections_unfolded = [ "Margin", "Rect", "Theme" ]
 
@@ -517,7 +893,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 _sections_unfolded = [ "Mouse" ]
 
 [node name="tooltip" type="Label" parent="ui/inventory/tooltip_layer/tooltip_panel" index="0"]
@@ -536,7 +912,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 8 )
+theme = ExtResource( 9 )
 text = "Das ist ein Test."
 percent_visible = 1.0
 lines_skipped = 0
@@ -621,9 +997,9 @@ page = 0.0
 value = 50.0
 exp_edit = false
 rounded = false
-texture_under = ExtResource( 12 )
+texture_under = ExtResource( 13 )
 texture_over = null
-texture_progress = ExtResource( 13 )
+texture_progress = ExtResource( 14 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = true
@@ -631,7 +1007,7 @@ stretch_margin_left = 6
 stretch_margin_top = 4
 stretch_margin_right = 6
 stretch_margin_bottom = 4
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 _sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
 [connection signal="tree_exiting" from="." to="." method="OnTreeExiting"]
