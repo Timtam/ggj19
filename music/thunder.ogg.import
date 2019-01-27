@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/thunder.ogg-e0c0333ff35cf72f243551a2803bd6f3.oggstr"
+
+[deps]
+
+source_file="res://music/thunder.ogg"
+dest_files=[ "res://.import/thunder.ogg-e0c0333ff35cf72f243551a2803bd6f3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
