@@ -11,7 +11,7 @@ public class MidnightShroom : BaseInteractable
 	public override Dialog GetInteractionDialog()
 	{
 		var text = "L: Diesen schönen blauen Mitternachtspilz kenne ich schon aus meinem Grimoire.";
-		if (DialogTriggers.HasListTree) // TODO: Correct list
+		if (DialogTriggers.HasListRock)
 		{
 			text += " Der steht außerdem auf meiner Liste.";
 		}

@@ -11,7 +11,7 @@ public class BerryBush : BaseInteractable
 	public override Dialog GetInteractionDialog()
 	{
 		var text = "L: Aus diesen Beeren habe ich schon einmal einen duftenden Kuchen gebacken.";
-		if (DialogTriggers.HasListTree) // TODO: Correct list
+		if (DialogTriggers.HasListTree)
 		{
 			text += " Sie stehen auch auf meiner Liste.";
 		}

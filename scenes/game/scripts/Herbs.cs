@@ -11,9 +11,9 @@ public class Herbs : BaseInteractable
 	public override Dialog GetInteractionDialog()
 	{
 		var text = "L: Kräuter für Zaubertränke und Rituale kann man immer gebrauchen.";
-		if (DialogTriggers.HasListTree) // TODO: Correct list
+		if (DialogTriggers.HasListGrass)
 		{
-			text += " [Diese brauche ich für Trank X.]";
+			text += " Diese brauche ich für den Trockungstrank.";
 		}
 		return new Dialog
 		{

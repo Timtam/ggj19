@@ -11,7 +11,7 @@ public class Crystal : BaseInteractable
 	public override Dialog GetInteractionDialog()
 	{
 		var text = "L: Dieser leuchtende Kristall nutzt die Hexe oft als Zutat für alle möglichen Zaubersprüche- und tränke.";
-		if (DialogTriggers.HasListTree) // TODO: Correct list
+		if (DialogTriggers.HasListTree)
 		{
 			text += " Der steht auch auf der Zutatenliste.";
 		}
