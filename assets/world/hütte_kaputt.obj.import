@@ -14,4 +14,4 @@ dest_files=[ "res://.import/hütte_kaputt.obj-183c7208e89258c3b2fb28281beae042.m
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 1, 1, 1 )
+scale_mesh=Vector3( 3, 3, 3 )

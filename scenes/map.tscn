@@ -1,34 +1,35 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://assets/world/map/Map.obj" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game/scripts/Map.cs" type="Script" id=2]
 [ext_resource path="res://assets/world/Hütte.obj" type="ArrayMesh" id=3]
-[ext_resource path="res://scenes/game/berry_bush.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/world/obj/Beerenbusch.obj" type="ArrayMesh" id=5]
-[ext_resource path="res://scenes/game/scripts/BerryBush.cs" type="Script" id=6]
-[ext_resource path="res://scenes/game/crystal.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/world/obj/Kristall_rosa.obj" type="ArrayMesh" id=8]
-[ext_resource path="res://scenes/game/scripts/Crystal.cs" type="Script" id=9]
-[ext_resource path="res://scenes/game/feather.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/world/obj/Feder_rot.obj" type="ArrayMesh" id=11]
-[ext_resource path="res://scenes/game/scripts/Feather.cs" type="Script" id=12]
-[ext_resource path="res://scenes/game/flower.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/world/obj/Blüte.obj" type="ArrayMesh" id=14]
-[ext_resource path="res://scenes/game/scripts/Flower.cs" type="Script" id=15]
-[ext_resource path="res://scenes/game/scripts/Grass.cs" type="Script" id=16]
-[ext_resource path="res://assets/world/plant_bush.obj" type="ArrayMesh" id=17]
-[ext_resource path="res://assets/world/plant_bushDetailed.obj" type="ArrayMesh" id=18]
-[ext_resource path="res://assets/world/plant_bushLarge.obj" type="ArrayMesh" id=19]
-[ext_resource path="res://scenes/ui/interaction_billboard.tscn" type="PackedScene" id=20]
-[ext_resource path="res://scenes/game/herbs.tscn" type="PackedScene" id=21]
-[ext_resource path="res://assets/world/obj/Kräuter.obj" type="ArrayMesh" id=22]
-[ext_resource path="res://scenes/game/scripts/Herbs.cs" type="Script" id=23]
-[ext_resource path="res://scenes/game/scripts/Rock.cs" type="Script" id=24]
-[ext_resource path="res://scenes/game/midnight_shroom.tscn" type="PackedScene" id=25]
-[ext_resource path="res://scenes/game/scripts/Tree.cs" type="Script" id=26]
-[ext_resource path="res://assets/world/baum_klein.obj" type="ArrayMesh" id=27]
-[ext_resource path="res://assets/world/baum_groß.obj" type="ArrayMesh" id=28]
-[ext_resource path="res://scenes/game/scripts/Water.cs" type="Script" id=29]
+[ext_resource path="res://assets/world/hütte_kaputt.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://scenes/game/berry_bush.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/world/obj/Beerenbusch.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://scenes/game/scripts/BerryBush.cs" type="Script" id=7]
+[ext_resource path="res://scenes/game/crystal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/world/obj/Kristall_rosa.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://scenes/game/scripts/Crystal.cs" type="Script" id=10]
+[ext_resource path="res://scenes/game/feather.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/world/obj/Feder_rot.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://scenes/game/scripts/Feather.cs" type="Script" id=13]
+[ext_resource path="res://scenes/game/flower.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/world/obj/Blüte.obj" type="ArrayMesh" id=15]
+[ext_resource path="res://scenes/game/scripts/Flower.cs" type="Script" id=16]
+[ext_resource path="res://scenes/game/scripts/Grass.cs" type="Script" id=17]
+[ext_resource path="res://assets/world/plant_bush.obj" type="ArrayMesh" id=18]
+[ext_resource path="res://assets/world/plant_bushDetailed.obj" type="ArrayMesh" id=19]
+[ext_resource path="res://assets/world/plant_bushLarge.obj" type="ArrayMesh" id=20]
+[ext_resource path="res://scenes/ui/interaction_billboard.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/game/herbs.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/world/obj/Kräuter.obj" type="ArrayMesh" id=23]
+[ext_resource path="res://scenes/game/scripts/Herbs.cs" type="Script" id=24]
+[ext_resource path="res://scenes/game/scripts/Rock.cs" type="Script" id=25]
+[ext_resource path="res://scenes/game/midnight_shroom.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/game/scripts/Tree.cs" type="Script" id=27]
+[ext_resource path="res://assets/world/baum_klein.obj" type="ArrayMesh" id=28]
+[ext_resource path="res://assets/world/baum_groß.obj" type="ArrayMesh" id=29]
+[ext_resource path="res://scenes/game/scripts/Water.cs" type="Script" id=30]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -50,7 +51,7 @@ extents = Vector3( 13.5066, 3.56637, 3.96051 )
 
 extents = Vector3( 9.25394, 4.03995, 14.1795 )
 
-[node name="Scene Root" instance=ExtResource( 1 )]
+[node name="Scene Root" index="0" instance=ExtResource( 1 )]
 
 transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0 )
 script = ExtResource( 2 )
@@ -58,10 +59,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="terrain" type="Spatial" parent="." index="0"]
 
-editor/display_folded = true
 transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0 )
 
-[node name="MeshInstance" type="MeshInstance" parent="terrain" index="0"]
+[node name="hut" type="MeshInstance" parent="terrain" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.9835, 4.32511, 11.4591 )
 layers = 1
@@ -151,6 +151,93 @@ material/72 = null
 material/73 = null
 material/74 = null
 material/75 = null
+_sections_unfolded = [ "Geometry", "Transform" ]
+
+[node name="hut_broken" type="MeshInstance" parent="terrain" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.9835, 4.32511, 11.4591 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 4 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
+material/18 = null
+material/19 = null
+material/20 = null
+material/21 = null
+material/22 = null
+material/23 = null
+material/24 = null
+material/25 = null
+material/26 = null
+material/27 = null
+material/28 = null
+material/29 = null
+material/30 = null
+material/31 = null
+material/32 = null
+material/33 = null
+material/34 = null
+material/35 = null
+material/36 = null
+material/37 = null
+material/38 = null
+material/39 = null
+material/40 = null
+material/41 = null
+material/42 = null
+material/43 = null
+material/44 = null
+material/45 = null
+material/46 = null
+material/47 = null
+material/48 = null
+material/49 = null
+material/50 = null
+material/51 = null
+material/52 = null
+material/53 = null
+material/54 = null
+material/55 = null
+material/56 = null
+material/57 = null
+material/58 = null
+material/59 = null
+material/60 = null
+material/61 = null
+material/62 = null
+material/63 = null
+material/64 = null
+material/65 = null
+material/66 = null
+material/67 = null
+material/68 = null
+material/69 = null
+material/70 = null
 
 [node name="obj" type="Spatial" parent="." index="1"]
 
@@ -167,11 +254,11 @@ editor/display_folded = true
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="berry_bush" parent="obj/interactions/berries" index="0" instance=ExtResource( 4 )]
+[node name="berry_bush" parent="obj/interactions/berries" index="0" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -225.341, 13.0915, 494.839 )
 
-[node name="berry_bush2" type="MeshInstance" parent="obj/interactions/berries" index="1" instance=ExtResource( 4 )]
+[node name="berry_bush2" type="MeshInstance" parent="obj/interactions/berries" index="1" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1333.16, 13.0915, 223.242 )
 layers = 1
@@ -183,7 +270,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 5 )
+mesh = ExtResource( 6 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -197,9 +284,9 @@ material/8 = null
 material/9 = null
 material/10 = null
 material/11 = null
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="berry_bush3" type="MeshInstance" parent="obj/interactions/berries" index="2" instance=ExtResource( 4 )]
+[node name="berry_bush3" type="MeshInstance" parent="obj/interactions/berries" index="2" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1327.34, 17.1705, 477.757 )
 layers = 1
@@ -211,7 +298,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 5 )
+mesh = ExtResource( 6 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -225,9 +312,9 @@ material/8 = null
 material/9 = null
 material/10 = null
 material/11 = null
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="berry_bush4" type="MeshInstance" parent="obj/interactions/berries" index="3" instance=ExtResource( 4 )]
+[node name="berry_bush4" type="MeshInstance" parent="obj/interactions/berries" index="3" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1632.36, 18.1642, 853.082 )
 layers = 1
@@ -239,7 +326,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 5 )
+mesh = ExtResource( 6 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -253,9 +340,9 @@ material/8 = null
 material/9 = null
 material/10 = null
 material/11 = null
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="berry_bush5" type="MeshInstance" parent="obj/interactions/berries" index="4" instance=ExtResource( 4 )]
+[node name="berry_bush5" type="MeshInstance" parent="obj/interactions/berries" index="4" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -736.784, 13.0915, 1047.4 )
 layers = 1
@@ -267,7 +354,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 5 )
+mesh = ExtResource( 6 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -281,18 +368,18 @@ material/8 = null
 material/9 = null
 material/10 = null
 material/11 = null
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="crystal" type="Spatial" parent="obj/interactions" index="1"]
 
 editor/display_folded = true
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
 
-[node name="crystal" parent="obj/interactions/crystal" index="0" instance=ExtResource( 7 )]
+[node name="crystal" parent="obj/interactions/crystal" index="0" instance=ExtResource( 8 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -210.056, 12.5029, 492.808 )
 
-[node name="crystal2" type="MeshInstance" parent="obj/interactions/crystal" index="1" instance=ExtResource( 7 )]
+[node name="crystal2" type="MeshInstance" parent="obj/interactions/crystal" index="1" instance=ExtResource( 8 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1256.7, 57.6591, 902.392 )
 layers = 1
@@ -304,12 +391,12 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 8 )
+mesh = ExtResource( 9 )
 skeleton = NodePath("..")
 material/0 = null
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
-[node name="crystal3" type="MeshInstance" parent="obj/interactions/crystal" index="2" instance=ExtResource( 7 )]
+[node name="crystal3" type="MeshInstance" parent="obj/interactions/crystal" index="2" instance=ExtResource( 8 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1195.84, 132.709, 844.708 )
 layers = 1
@@ -321,12 +408,12 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 8 )
+mesh = ExtResource( 9 )
 skeleton = NodePath("..")
 material/0 = null
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
-[node name="crystal4" type="MeshInstance" parent="obj/interactions/crystal" index="3" instance=ExtResource( 7 )]
+[node name="crystal4" type="MeshInstance" parent="obj/interactions/crystal" index="3" instance=ExtResource( 8 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1061.28, 57.6591, 845.395 )
 layers = 1
@@ -338,12 +425,12 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 8 )
+mesh = ExtResource( 9 )
 skeleton = NodePath("..")
 material/0 = null
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
-[node name="crystal5" type="MeshInstance" parent="obj/interactions/crystal" index="4" instance=ExtResource( 7 )]
+[node name="crystal5" type="MeshInstance" parent="obj/interactions/crystal" index="4" instance=ExtResource( 8 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1243.62, 57.6591, 789.779 )
 layers = 1
@@ -355,21 +442,21 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 8 )
+mesh = ExtResource( 9 )
 skeleton = NodePath("..")
 material/0 = null
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="feathers" type="Spatial" parent="obj/interactions" index="2"]
 
 editor/display_folded = true
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
 
-[node name="feather" parent="obj/interactions/feathers" index="0" instance=ExtResource( 10 )]
+[node name="feather" parent="obj/interactions/feathers" index="0" instance=ExtResource( 11 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -236.712, 12.5085, 513.096 )
 
-[node name="feather2" type="MeshInstance" parent="obj/interactions/feathers" index="1" instance=ExtResource( 10 )]
+[node name="feather2" type="MeshInstance" parent="obj/interactions/feathers" index="1" instance=ExtResource( 11 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.1507, 12.5085, 1069.81 )
 layers = 1
@@ -381,13 +468,13 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 11 )
+mesh = ExtResource( 12 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
-[node name="feather3" type="MeshInstance" parent="obj/interactions/feathers" index="2" instance=ExtResource( 10 )]
+[node name="feather3" type="MeshInstance" parent="obj/interactions/feathers" index="2" instance=ExtResource( 11 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 90.7056, 12.5085, 962.479 )
 layers = 1
@@ -399,13 +486,13 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 11 )
+mesh = ExtResource( 12 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
-[node name="feather4" type="MeshInstance" parent="obj/interactions/feathers" index="3" instance=ExtResource( 10 )]
+[node name="feather4" type="MeshInstance" parent="obj/interactions/feathers" index="3" instance=ExtResource( 11 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -581.218, 12.5085, 887.26 )
 layers = 1
@@ -417,13 +504,13 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 11 )
+mesh = ExtResource( 12 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
-[node name="feather5" type="MeshInstance" parent="obj/interactions/feathers" index="4" instance=ExtResource( 10 )]
+[node name="feather5" type="MeshInstance" parent="obj/interactions/feathers" index="4" instance=ExtResource( 11 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -832.382, 12.5085, 434.811 )
 layers = 1
@@ -435,22 +522,22 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 11 )
+mesh = ExtResource( 12 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 
 [node name="flowers" type="Spatial" parent="obj/interactions" index="3"]
 
 editor/display_folded = true
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
 
-[node name="flower" parent="obj/interactions/flowers" index="0" instance=ExtResource( 13 )]
+[node name="flower" parent="obj/interactions/flowers" index="0" instance=ExtResource( 14 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -214.004, 12.4938, 513.971 )
 
-[node name="flower2" type="MeshInstance" parent="obj/interactions/flowers" index="1" instance=ExtResource( 13 )]
+[node name="flower2" type="MeshInstance" parent="obj/interactions/flowers" index="1" instance=ExtResource( 14 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1533.61, 12.4937, 350.123 )
 layers = 1
@@ -462,13 +549,13 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 14 )
+mesh = ExtResource( 15 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
-[node name="flower3" type="MeshInstance" parent="obj/interactions/flowers" index="2" instance=ExtResource( 13 )]
+[node name="flower3" type="MeshInstance" parent="obj/interactions/flowers" index="2" instance=ExtResource( 14 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1564.96, 12.4938, -127.367 )
 layers = 1
@@ -480,13 +567,13 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 14 )
+mesh = ExtResource( 15 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
-[node name="flower4" type="MeshInstance" parent="obj/interactions/flowers" index="3" instance=ExtResource( 13 )]
+[node name="flower4" type="MeshInstance" parent="obj/interactions/flowers" index="3" instance=ExtResource( 14 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1113.6, 12.4938, 305.756 )
 layers = 1
@@ -498,13 +585,13 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 14 )
+mesh = ExtResource( 15 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
-[node name="flower5" type="MeshInstance" parent="obj/interactions/flowers" index="4" instance=ExtResource( 13 )]
+[node name="flower5" type="MeshInstance" parent="obj/interactions/flowers" index="4" instance=ExtResource( 14 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -811.18, 12.4937, 59.781 )
 layers = 1
@@ -516,17 +603,17 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 14 )
+mesh = ExtResource( 15 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
 [node name="grass" type="Spatial" parent="obj/interactions" index="4"]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.2942, 2.71625, 211.003 )
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="meshes" type="Spatial" parent="obj/interactions/grass" index="0"]
@@ -547,7 +634,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 17 )
+mesh = ExtResource( 18 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -564,7 +651,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 18 )
+mesh = ExtResource( 19 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -581,7 +668,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 18 )
+mesh = ExtResource( 19 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -597,7 +684,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 19 )
+mesh = ExtResource( 20 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -613,7 +700,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 17 )
+mesh = ExtResource( 18 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -629,7 +716,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 17 )
+mesh = ExtResource( 18 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -645,7 +732,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 18 )
+mesh = ExtResource( 19 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -661,7 +748,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 19 )
+mesh = ExtResource( 20 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -677,7 +764,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 17 )
+mesh = ExtResource( 18 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -693,7 +780,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 18 )
+mesh = ExtResource( 19 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -709,7 +796,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 18 )
+mesh = ExtResource( 19 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -742,7 +829,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.438042, 0, 0 )
 shape = SubResource( 1 )
 disabled = false
 
-[node name="billboard" parent="obj/interactions/grass" index="2" instance=ExtResource( 20 )]
+[node name="billboard" parent="obj/interactions/grass" index="2" instance=ExtResource( 21 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5613, 0 )
 
@@ -751,11 +838,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5613, 0 )
 editor/display_folded = true
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
 
-[node name="herbs" parent="obj/interactions/herbs" index="0" instance=ExtResource( 21 )]
+[node name="herbs" parent="obj/interactions/herbs" index="0" instance=ExtResource( 22 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -199.656, 12.4937, 505.254 )
 
-[node name="herbs2" type="MeshInstance" parent="obj/interactions/herbs" index="1" instance=ExtResource( 21 )]
+[node name="herbs2" type="MeshInstance" parent="obj/interactions/herbs" index="1" instance=ExtResource( 22 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -732.145, 12.4938, -145.601 )
 layers = 1
@@ -767,12 +854,12 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 22 )
+mesh = ExtResource( 23 )
 skeleton = NodePath("..")
 material/0 = null
-script = ExtResource( 23 )
+script = ExtResource( 24 )
 
-[node name="herbs3" type="MeshInstance" parent="obj/interactions/herbs" index="2" instance=ExtResource( 21 )]
+[node name="herbs3" type="MeshInstance" parent="obj/interactions/herbs" index="2" instance=ExtResource( 22 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 202.381, 12.4938, 56.8438 )
 layers = 1
@@ -784,12 +871,12 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 22 )
+mesh = ExtResource( 23 )
 skeleton = NodePath("..")
 material/0 = null
-script = ExtResource( 23 )
+script = ExtResource( 24 )
 
-[node name="herbs4" type="MeshInstance" parent="obj/interactions/herbs" index="3" instance=ExtResource( 21 )]
+[node name="herbs4" type="MeshInstance" parent="obj/interactions/herbs" index="3" instance=ExtResource( 22 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 112.359, 12.4937, 535.953 )
 layers = 1
@@ -801,12 +888,12 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 22 )
+mesh = ExtResource( 23 )
 skeleton = NodePath("..")
 material/0 = null
-script = ExtResource( 23 )
+script = ExtResource( 24 )
 
-[node name="herbs5" type="MeshInstance" parent="obj/interactions/herbs" index="4" instance=ExtResource( 21 )]
+[node name="herbs5" type="MeshInstance" parent="obj/interactions/herbs" index="4" instance=ExtResource( 22 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -825.655, 12.4937, 688.895 )
 layers = 1
@@ -818,16 +905,16 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 22 )
+mesh = ExtResource( 23 )
 skeleton = NodePath("..")
 material/0 = null
-script = ExtResource( 23 )
+script = ExtResource( 24 )
 
 [node name="rock" type="Spatial" parent="obj/interactions" index="6"]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -234.586, 12.1581, 177.379 )
-script = ExtResource( 24 )
+script = ExtResource( 25 )
 
 [node name="Area" type="Area" parent="obj/interactions/rock" index="0"]
 
@@ -858,7 +945,7 @@ shape = SubResource( 2 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="billboard" parent="obj/interactions/rock" index="1" instance=ExtResource( 20 )]
+[node name="billboard" parent="obj/interactions/rock" index="1" instance=ExtResource( 21 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.26768, 0 )
 
@@ -866,35 +953,35 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.26768, 0 )
 
 editor/display_folded = true
 
-[node name="midnight_shroom" parent="obj/interactions/shrooms" index="0" instance=ExtResource( 25 )]
+[node name="midnight_shroom" parent="obj/interactions/shrooms" index="0" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.2728, 2.52856, 97.0986 )
 
-[node name="midnight_shroom2" parent="obj/interactions/shrooms" index="1" instance=ExtResource( 25 )]
+[node name="midnight_shroom2" parent="obj/interactions/shrooms" index="1" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1654, 2.50471, 65.7346 )
 
-[node name="midnight_shroom3" parent="obj/interactions/shrooms" index="2" instance=ExtResource( 25 )]
+[node name="midnight_shroom3" parent="obj/interactions/shrooms" index="2" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6119, 2.50471, 65.2315 )
 
-[node name="midnight_shroom4" parent="obj/interactions/shrooms" index="3" instance=ExtResource( 25 )]
+[node name="midnight_shroom4" parent="obj/interactions/shrooms" index="3" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0243, 2.50471, 90.4577 )
 
-[node name="midnight_shroom5" parent="obj/interactions/shrooms" index="4" instance=ExtResource( 25 )]
+[node name="midnight_shroom5" parent="obj/interactions/shrooms" index="4" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9939, 2.50471, 89.8253 )
 
-[node name="midnight_shroom6" parent="obj/interactions/shrooms" index="5" instance=ExtResource( 25 )]
+[node name="midnight_shroom6" parent="obj/interactions/shrooms" index="5" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.5949, 2.50471, 96.2155 )
 
-[node name="midnight_shroom7" parent="obj/interactions/shrooms" index="6" instance=ExtResource( 25 )]
+[node name="midnight_shroom7" parent="obj/interactions/shrooms" index="6" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -125.11, 2.50471, 138.21 )
 
-[node name="midnight_shroom8" parent="obj/interactions/shrooms" index="7" instance=ExtResource( 25 )]
+[node name="midnight_shroom8" parent="obj/interactions/shrooms" index="7" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -125.704, 2.50471, 138.614 )
 
@@ -902,7 +989,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -125.704, 2.50471, 138.614 )
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -229.425, 4.14461, 0 )
-script = ExtResource( 26 )
+script = ExtResource( 27 )
 
 [node name="tree_small" type="MeshInstance" parent="obj/interactions/tree" index="0"]
 
@@ -916,7 +1003,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 27 )
+mesh = ExtResource( 28 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -934,7 +1021,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 28 )
+mesh = ExtResource( 29 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
@@ -969,7 +1056,7 @@ reverb_bus_uniformity = 0.0
 shape = SubResource( 3 )
 disabled = false
 
-[node name="billboard" parent="obj/interactions/tree" index="3" instance=ExtResource( 20 )]
+[node name="billboard" parent="obj/interactions/tree" index="3" instance=ExtResource( 21 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76268, 0 )
 
@@ -977,7 +1064,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76268, 0 )
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0414, 0, 49.8785 )
-script = ExtResource( 29 )
+script = ExtResource( 30 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area" type="Area" parent="obj/interactions/water" index="0"]
@@ -1043,7 +1130,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9312, 0, -3.08167 )
 shape = SubResource( 5 )
 disabled = true
 
-[node name="billboard" parent="obj/interactions/water" index="2" instance=ExtResource( 20 )]
+[node name="billboard" parent="obj/interactions/water" index="2" instance=ExtResource( 21 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.76051, -3.35679 )
 
