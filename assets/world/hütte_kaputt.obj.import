@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/hütte_kaputt.obj-183c7208e89258c3b2fb28281beae042.mesh"
+
+[deps]
+
+files=[ "res://.import/hütte_kaputt.obj-183c7208e89258c3b2fb28281beae042.mesh" ]
+
+source_file="res://assets/world/hütte_kaputt.obj"
+dest_files=[ "res://.import/hütte_kaputt.obj-183c7208e89258c3b2fb28281beae042.mesh", "res://.import/hütte_kaputt.obj-183c7208e89258c3b2fb28281beae042.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
