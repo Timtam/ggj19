@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/game/scripts/GameWorld.cs" type="Script" id=1]
 [ext_resource path="res://scenes/map.tscn" type="PackedScene" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://assets/ui/barHorizontal_green.png" type="Texture" id=17]
 [ext_resource path="res://scenes/ui/scripts/Health.cs" type="Script" id=18]
 [ext_resource path="res://scenes/ui/scripts/Pause.cs" type="Script" id=19]
+[ext_resource path="res://music/forest.ogg" type="AudioStream" id=20]
+[ext_resource path="res://sounds/forest_loop.ogg" type="AudioStream" id=21]
 
 [sub_resource type="BakedLightmapData" id=1]
 
@@ -929,6 +931,26 @@ text = "Spiel Beenden"
 flat = false
 align = 1
 _sections_unfolded = [ "Theme" ]
+
+[node name="audio" type="Node" parent="." index="6"]
+
+[node name="bg_music" type="AudioStreamPlayer" parent="audio" index="0"]
+
+stream = ExtResource( 20 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="fx_bg" type="AudioStreamPlayer" parent="audio" index="1"]
+
+stream = ExtResource( 21 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 [connection signal="tree_exiting" from="." to="." method="OnTreeExiting"]
 

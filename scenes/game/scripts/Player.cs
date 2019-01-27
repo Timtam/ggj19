@@ -21,6 +21,7 @@ public class Player : KinematicBody
 
 	AudioStream[] stepSounds = new AudioStream[10];
 	AudioStream[] landingSounds = new AudioStream[2];
+	AudioStream[] jumpSounds = new AudioStream[2];
 	bool jumping = false;
 
 	public override void _Ready()
@@ -41,6 +42,10 @@ public class Player : KinematicBody
 		for (int i = 0; i < landingSounds.Length; i++)
 		{
 			landingSounds[i] = ResourceLoader.Load($"res://sounds/landing_{i + 1}.ogg") as AudioStream;
+		}
+		for (int i = 0; i < jumpSounds.Length; i++)
+		{
+			jumpSounds[i] = ResourceLoader.Load($"res://sounds/jump_{i + 1}.ogg") as AudioStream;
 		}
 	}
 
@@ -86,6 +91,11 @@ public class Player : KinematicBody
 			stepPlayer.Stream = landingSounds[new Random().Next(landingSounds.Length)];
 			stepPlayer.Play();
 			jumping = false;
+		}
+		else if (Input.IsActionPressed("jump") && IsOnFloor())
+		{
+			stepPlayer.Stream = jumpSounds[new Random().Next(jumpSounds.Length)];
+			stepPlayer.Play();
 		}
 		else if (!IsOnFloor())
 		{
