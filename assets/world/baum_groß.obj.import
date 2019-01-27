@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/baum_groß.obj-500280eb74ad526541639f9a99729d10.mesh"
+
+[deps]
+
+files=[ "res://.import/baum_groß.obj-500280eb74ad526541639f9a99729d10.mesh" ]
+
+source_file="res://assets/world/baum_groß.obj"
+dest_files=[ "res://.import/baum_groß.obj-500280eb74ad526541639f9a99729d10.mesh", "res://.import/baum_groß.obj-500280eb74ad526541639f9a99729d10.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 0.01, 0.01, 0.01 )

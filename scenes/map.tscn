@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/world/map/Map.obj" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game/scripts/Map.cs" type="Script" id=2]
@@ -15,7 +15,9 @@
 [ext_resource path="res://scenes/game/herbs.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/game/scripts/Rock.cs" type="Script" id=14]
 [ext_resource path="res://scenes/game/midnight_shroom.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/game/scripts/Water.cs" type="Script" id=16]
+[ext_resource path="res://assets/world/baum_klein.obj" type="ArrayMesh" id=16]
+[ext_resource path="res://assets/world/baum_groß.obj" type="ArrayMesh" id=17]
+[ext_resource path="res://scenes/game/scripts/Water.cs" type="Script" id=18]
 
 [sub_resource type="BoxShape" id=4]
 
@@ -24,6 +26,10 @@ extents = Vector3( 4.69225, 1.59062, 4.05895 )
 [sub_resource type="BoxShape" id=3]
 
 extents = Vector3( 4.58821, 9.3213, 4.33106 )
+
+[sub_resource type="BoxShape" id=5]
+
+extents = Vector3( 4.57004, 7.05821, 3.89086 )
 
 [sub_resource type="BoxShape" id=1]
 
@@ -182,7 +188,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -214.004, 12.4938, 513.971 )
 
 [node name="grass" type="Spatial" parent="obj/interactions" index="4"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.2942, 2.71625, 211.003 )
 script = ExtResource( 8 )
 _sections_unfolded = [ "Transform" ]
@@ -415,6 +420,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -199.656, 12.4937, 505.254 )
 
 [node name="rock" type="Spatial" parent="obj/interactions" index="6"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -234.586, 12.1581, 177.379 )
 script = ExtResource( 14 )
 
@@ -487,11 +493,84 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -125.11, 2.50471, 138.21 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -125.704, 2.50471, 138.614 )
 
-[node name="water" type="Spatial" parent="obj/interactions" index="8"]
+[node name="tree" type="Spatial" parent="obj/interactions" index="8"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -229.425, 4.14461, 0 )
+
+[node name="tree_small" type="MeshInstance" parent="obj/interactions/tree" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00011, -0.21371, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 16 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="tree_big" type="MeshInstance" parent="obj/interactions/tree" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.851425, -0.102113, -0.752865 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 17 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="Area" type="Area" parent="obj/interactions/tree" index="2"]
+
+editor/display_folded = true
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="obj/interactions/tree/Area" index="0"]
+
+shape = SubResource( 5 )
+disabled = false
+
+[node name="billboard" parent="obj/interactions/tree" index="3" instance=ExtResource( 12 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76268, 0 )
+
+[node name="water" type="Spatial" parent="obj/interactions" index="9"]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0414, 0, 49.8785 )
-script = ExtResource( 16 )
+script = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Area" type="Area" parent="obj/interactions/water" index="0"]

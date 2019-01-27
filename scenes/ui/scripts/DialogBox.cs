@@ -38,6 +38,7 @@ public class DialogBox : VBoxContainer
 		currentDialog.Script?.Invoke();
 		currentOptions = dialog.Options.Where(o => o.Condition == null || o.Condition.Invoke()).ToList();
 		textBox.Text = currentDialog.Text;
+		textBox.VisibleCharacters = 0;
 		for (int i = 0; i < currentOptions.Count && i < buttons.Length; i++)
 		{
 			buttons[i].Text = currentOptions[i].Text;
