@@ -49,6 +49,7 @@ public class Inventory : Panel
 				this.Visible = false;
 				this.isInInventory = false;
 				Input.SetMouseMode(Input.MouseMode.Captured);
+				Tooltip.Visible = false;
 			}
 		}
 	}
