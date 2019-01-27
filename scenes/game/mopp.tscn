@@ -8,7 +8,7 @@
 radius = 0.455348
 height = 0.757423
 
-[node name="mopp" type="KinematicBody" index="0"]
+[node name="mopp" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false

@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/ui/splash.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/Splash.cs" type="Script" id=2]
 
-[node name="splash" type="TextureRect" index="0"]
+[node name="splash" type="TextureRect"]
 
 anchor_left = 0.0
 anchor_top = 0.0
