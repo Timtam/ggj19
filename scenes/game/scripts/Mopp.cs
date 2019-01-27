@@ -5,12 +5,13 @@ public class Mopp : KinematicBody
 {
 	Player player;
 	MoveController controller;
+	AudioStreamPlayer3D fxPlayer;
 	public float Health;
 	public Vector3 Velocity;
 
 	public override void _Ready()
 	{
-		player = this.GetGameWorld().Player;
+		fxPlayer = (AudioStreamPlayer3D)GetNode("fx_player");
 		Health = 100;
 		controller = new MoveController(this);
 	}
@@ -20,8 +21,16 @@ public class Mopp : KinematicBody
 		controller.PhysicsMove(delta, ref Velocity, moveVec: Vector2.Zero, moveBasis: this.GlobalTransform.basis);
 	}
 
+	public void PlayHitSound()
+	{
+		fxPlayer.Stream = ResourceLoader.Load($"res://sounds/mop_hit_{new Random().Next(1, 4)}.ogg") as AudioStream;
+		fxPlayer.Play();
+	}
+
 	public void Die()
 	{
+		fxPlayer.Stream = ResourceLoader.Load($"res://sounds/mop_die.ogg") as AudioStream;
+		fxPlayer.Play();
 		this.QueueFree();
 		var itemSpawn = GlobalTransform.origin;
 		itemSpawn.y += 1;

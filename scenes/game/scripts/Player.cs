@@ -63,9 +63,13 @@ public class Player : KinematicBody
 
 		if (Input.IsActionJustPressed("attack"))
 		{
+			fxPlayer.Stream = ResourceLoader.Load("res://sounds/player_attack.ogg") as AudioStream;
+			fxPlayer.VolumeDb = -3;
+			fxPlayer.Play();
 			var mopp = attackArea.GetOverlappingBodies().Select(b => b as Mopp).Where(b => b != null).FirstOrDefault();
 			if (mopp != null)
 			{
+				mopp.PlayHitSound();
 				mopp.Health -= ATTACK_DAMAGE;
 				var dist = mopp.GlobalTransform.origin - this.GlobalTransform.origin;
 				dist = dist.Normalized();
