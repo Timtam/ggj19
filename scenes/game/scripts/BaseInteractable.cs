@@ -7,6 +7,8 @@ public abstract class BaseInteractable : Spatial, IInteractable
 	protected int enterCounter = 0;
 	public bool Enabled = true;
 
+	Sprite3D billboard = null;
+
 	protected void RegisterSignals()
 	{
 		foreach (var area in GetChildren().Select(o => o as Area).Where(a => a != null))
@@ -14,6 +16,7 @@ public abstract class BaseInteractable : Spatial, IInteractable
 			area.Connect("body_entered", this, nameof(OnBodyEntered));
 			area.Connect("body_exited", this, nameof(OnBodyExited));
 		}
+		billboard = GetNode("billboard") as Sprite3D;
 	}
 
 	public void OnBodyEntered(CollisionObject other)
@@ -23,6 +26,7 @@ public abstract class BaseInteractable : Spatial, IInteractable
 			if (enterCounter == 0)
 			{
 				player.EnterInteractionArea(this);
+				billboard.Visible = true;
 			}
 			enterCounter++;
 		}
@@ -36,6 +40,7 @@ public abstract class BaseInteractable : Spatial, IInteractable
 			if (enterCounter == 0)
 			{
 				player.ExitInteractionArea(this);
+				billboard.Visible = false;
 			}
 		}
 	}
